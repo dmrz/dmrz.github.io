@@ -6,10 +6,28 @@
     <description>Recent content on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Sep 2011 16:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://dimamoroz.com/about/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/about/</guid>
+      <description>About TODO</description>
+    </item>
+    
+    <item>
+      <title>Contacts</title>
+      <link>https://dimamoroz.com/contacts/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/contacts/</guid>
+      <description>Contacts TODO</description>
+    </item>
     
     <item>
       <title>Django local development with nginx on OSX</title>
@@ -137,24 +155,6 @@ $ ssh-keygen -y -f /path/to/private_rsa &amp;gt; /path/to/public_rsa Note that i
 &lt;p&gt;I attend and I do like to read things on web in English, I like to deal with people using this language, that is why entire site and blog entries will be written in it. I am from Ukraine, that is not my native language, I still study it, so either my speech and texts are not fluent. Just feel free to ask anything in a case of misunderstanding.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://dimamoroz.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dimamoroz.com/about/</guid>
-      <description>About TODO</description>
-    </item>
-    
-    <item>
-      <title>Contacts</title>
-      <link>https://dimamoroz.com/contacts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dimamoroz.com/contacts/</guid>
-      <description>Contacts TODO</description>
     </item>
     
   </channel>
