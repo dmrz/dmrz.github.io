@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redmine on Dima Moroz</title>
+    <link>https://dimamoroz.com/tags/redmine/</link>
+    <description>Recent content in Redmine on Dima Moroz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Mar 2011 15:08:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://dimamoroz.com/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redmine: sending email using google apps | Dima Moroz</title>
+      <link>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</link>
+      <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</guid>
+      <description>&lt;p&gt;I was facing the next error with a config variant created using Redmine documentation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;m&#34;&gt;530&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;.7.0 Must issue a STARTTLS &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; first&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Dima Moroz</title>
+    <link>https://dimamoroz.com/tags/linux/</link>
+    <description>Recent content in Linux on Dima Moroz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Mar 2011 07:30:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://dimamoroz.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Some useful git tips | Dima Moroz</title>
+      <link>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</link>
+      <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</guid>
+      <description>&lt;p&gt;Here will be useful git tips and just repeating commands I often use but can&amp;rsquo;t remember.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Creating a public rsa key when you already have a private one | Dima Moroz</title>
+      <link>https://dimamoroz.com/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</link>
+      <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</guid>
+      <description>To create a public rsa key using a private one, simply type:
+$ ssh-keygen -y -f /path/to/private_rsa &amp;gt; /path/to/public_rsa Note that it is not adding user@hostname, so if you need it, add this in the end of public_rsa file with a leading space symbol</description>
+    </item>
+    
+  </channel>
+</rss>

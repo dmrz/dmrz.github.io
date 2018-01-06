@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Django local development with nginx on OSX | Dima Moroz</title>
+  <meta property="og:title" content="Django local development with nginx on OSX | Dima Moroz" />
+  <meta name="twitter:title" content="Django local development with nginx on OSX | Dima Moroz" />
+  <meta name="description" content="How I do an installation of nginx for Django local development with it on OSX">
+  <meta property="og:description" content="How I do an installation of nginx for Django local development with it on OSX">
+  <meta name="twitter:description" content="How I do an installation of nginx for Django local development with it on OSX">
+  <meta name="author" content=""/>
+  <link href='https://dimamoroz.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://dimamoroz.com/img/avatar.png" />
+  <meta name="twitter:image" content="https://dimamoroz.com/img/avatar.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dima Moroz" />
+
+  <meta name="generator" content="Hugo 0.32.2" />
+  <link rel="canonical" href="https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/" />
+  <link rel="alternate" href="https://dimamoroz.com/index.xml" type="application/rss+xml" title="Dima Moroz">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://dimamoroz.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://dimamoroz.com/css/codeblock.css" />
+  <link rel="stylesheet" href="https://dimamoroz.com/css/highlight.min.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-11219276-3', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://dimamoroz.com/">Dima Moroz</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/blog/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Contacts" href="/contacts/">Contacts</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dima Moroz" href="https://dimamoroz.com/">
+            <img class="avatar-img" src="https://dimamoroz.com/img/avatar.png" alt="Dima Moroz" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="blog-heading">
+              <h1>Django local development with nginx on OSX | Dima Moroz</h1>
+                
+                  
+                    <h2 class="blog-subheading">How I do an installation of nginx for Django local development with it on OSX</h2>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Installing nginx using brew is quite easy:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ brew install nginx</code></pre></div>
+<p>Post install instruction explains how to run nginx on starup by adding it&rsquo;s launchd config to <em>~/Library/LaunchAgents/</em> and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo nginx</code></pre></div>
+<p>But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to <em>/Library/LaunchDaemons/</em> (so it runs even before any user is logged in):</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary</code></pre></div>
+<p></p>
+
+<p>And slightly edit it, so it finally looks like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>Label<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>nginx<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>RunAtLoad<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>KeepAlive<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UserName<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>root<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>ProgramArguments<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;array&gt;</span>
+        <span class="nt">&lt;string&gt;</span>/usr/local/Cellar/nginx/1.0.6/sbin/nginx<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;string&gt;</span>-g<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;string&gt;</span>daemon off;<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+    <span class="nt">&lt;key&gt;</span>WorkingDirectory<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>/usr/local<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span></code></pre></div>
+<p>I set a Label option to nginx, so I can easily restart it with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo launchctl stop nginx # this will stop and start nginx again since OnDemand option is <span class="nb">set</span> to <span class="nb">false</span> by default</code></pre></div>
+<p>UserName is set to root, so nginx runs on port 80. If you need to pass some additional arguments to nginx executable, you can list them in ProgramArguments.</p>
+
+<p>Further, I edit nginx config, which is located at <em>/usr/local/etc/nginx/nginx.conf</em> and add my generic code snippet I use everywhere for local Django development with nginx (it&rsquo;s a server directive so I usually add it before the last closing bracket):</p>
+<div class="highlight"><pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">server_name</span> <span class="p">~</span><span class="sr">^(?P&lt;subdomain&gt;\w+\.)?(?P&lt;project_name&gt;\w+)\.dev$;</span>
+    <span class="s">access_log</span> <span class="no">off</span><span class="p">;</span>
+    <span class="kn">gzip</span> <span class="no">off</span><span class="p">;</span>
+    <span class="kn">set</span> <span class="nv">$home_dir</span> <span class="s">/Users/foomor</span><span class="p">;</span>
+    <span class="kn">set</span> <span class="nv">$project_path</span> <span class="nv">$home_dir/Projects/$project_name</span><span class="p">;</span>
+    <span class="kn">set</span> <span class="nv">$python_version</span> <span class="mi">2</span><span class="s">.7</span><span class="p">;</span>
+    <span class="kn">set</span> <span class="nv">$virtualenv_path</span> <span class="nv">$home_dir/.virtualenvs/$project_name/lib/python$python_version/site-packages</span><span class="p">;</span>
+
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">^/(static|media)/(.*)$</span> <span class="p">{</span>
+        <span class="kn">alias</span> <span class="nv">$project_path/$1/$2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="s">^~</span> <span class="s">/static/admin</span> <span class="p">{</span>
+        <span class="kn">alias</span> <span class="nv">$virtualenv_path/django/contrib/admin/media</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="s">/__debug__/m</span> <span class="p">{</span>
+        <span class="kn">alias</span> <span class="nv">$virtualenv_path/debug_toolbar/media/debug_toolbar</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="s">/favicon.ico</span> <span class="p">{</span>
+        <span class="kn">alias</span> <span class="nv">$project_path/static/img/favicon.png</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8000</span><span class="p">;</span>
+        <span class="kn">client_max_body_size</span> <span class="mi">100m</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<p>I have a personal development convention, that all local Django projects are located within <em>~/Projects</em> directory, virtual environments are located within <em>~/.virtualenvs</em> and virtual environment name is similar to it&rsquo;s corresponding project name. Project assets are located within <em>static</em> directory in the project root and uploaded files are located within <em>media</em>. In addition to above, nginx also serves django admin static files, <a href="http://pypi.python.org/pypi/django-debug-toolbar">django-debug-toolbar</a> and favicon alias. Logging access is disabled until I need it. If you are going to use this config, set appropriate values to <em>$home_dir</em>, <em>$project_path</em>, <em>$python_version</em> and <em>$virtualenv_path</em> variables.</p>
+
+<p>My local DNS transfers all requests made to *.dev to 127.0.0.1, server_name captures project name in domain name and all project static files are served with nginx. For instance I have a project named <em>mydjangoapp</em> and it&rsquo;s development server (<em>python manage.py runserver</em>) is currently running, so I just open <a href="http://mydjangoapp.dev">http://mydjangoapp.dev</a> in the browser and it works.</p>
+
+<p>If you do not have a local DNS that will map *.dev to 127.0.0.1, you will have do that in your <em>/etc/hosts</em> file.</p>
+
+<p>When configuration file is ready, you can finally load nginx launchd config and it will run every time on the system startup:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo launchctl load -w /Library/LaunchDaemons/org.nginx.nginx.plist</code></pre></div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://dimamoroz.com/2011/09/06/django-development-environment-osx/" data-toggle="tooltip" data-placement="top" title="Django development environment on OSX | Dima Moroz">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "foomor" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            
+            <a href="https://dimamoroz.com/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;
+          2011
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://dimamoroz.com/">Dima Moroz</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.32.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://dimamoroz.com/js/main.js"></script>
+<script src="https://dimamoroz.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://dimamoroz.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

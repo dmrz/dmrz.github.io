@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pip on Dima Moroz</title>
+    <link>https://dimamoroz.com/tags/pip/</link>
+    <description>Recent content in Pip on Dima Moroz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Oct 2010 09:34:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://dimamoroz.com/tags/pip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python virtual environment on Ubuntu | Dima Moroz</title>
+      <link>https://dimamoroz.com/2010/10/08/python-virtual-environment-ubuntu/</link>
+      <pubDate>Fri, 08 Oct 2010 09:34:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/2010/10/08/python-virtual-environment-ubuntu/</guid>
+      <description>&lt;p&gt;&lt;em&gt;I had some mess around the process of installing those tools on my laptop running Ubuntu, so my decision was to write and explain everything step by step just in a case for the memo and probably a useful post for anyone as well.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Who are those lads?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenv&#34;&gt;virtualenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenvwrapper&#34;&gt;virtualenvwrapper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/pip&#34;&gt;pip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are not an Ubuntu user, you should better read this &lt;a href=&#34;http://mathematism.com/2009/jul/30/presentation-pip-and-virtualenv/&#34;&gt;Presentation: pip and virtualenv&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
