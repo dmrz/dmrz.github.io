@@ -1,26 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tips on Dima Moroz</title>
-    <link>https://dimamoroz.com/tags/tips/</link>
-    <description>Recent content in Tips on Dima Moroz</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <title>Tips on dmrz</title>
+    <link>https://dmrz.dev/tags/tips/</link>
+    <description>Recent content in Tips on dmrz</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <lastBuildDate>Wed, 09 Mar 2011 07:30:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://dimamoroz.com/tags/tips/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://dmrz.dev/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Some useful git tips | Dima Moroz</title>
-      <link>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</link>
+      <title>Some useful git tips</title>
+      <link>https://dmrz.dev/2011/03/09/some-useful-git-tips/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</guid>
-      <description>&lt;p&gt;Here will be useful git tips and just repeating commands I often use but can&amp;rsquo;t remember.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://dmrz.dev/2011/03/09/some-useful-git-tips/</guid>
+      <description>&lt;p&gt;Here will be useful git tips and just repeating commands I often use but can&amp;rsquo;t remember.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
