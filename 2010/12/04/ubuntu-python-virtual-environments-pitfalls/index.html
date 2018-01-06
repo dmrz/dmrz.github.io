@@ -53,9 +53,6 @@ ga('send', 'pageview');
   <li>
       <a href='/blog/'>Blog</a>
     </li>
-  <li>
-      <a href='/about/'>About</a>
-    </li>
   
   </ul>
 </nav>
@@ -124,17 +121,17 @@ One min read
 <h3 id="pysqlite-build-error">pysqlite build error</h3>
 
 <p>If you receive an error message like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">src/connection.h:33: fatal error: sqlite3.h: No such file or directory</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">src/connection.h:33: fatal error: sqlite3.h: No such file or directory</code></pre></div>
 <p>It means you have no sqlite3 library development files. Solution is:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install libsqlite3-dev</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install libsqlite3-dev</code></pre></div>
 <h3 id="lxml-build-error">lxml build error</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">fatal error: libxml/xmlversion.h: No such file or directory</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fatal error: libxml/xmlversion.h: No such file or directory</code></pre></div>
 <p>Means you have no libxml2 and/or libxslt development files. So just install them:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install libxml2-dev libxslt1-dev</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install libxml2-dev libxslt1-dev</code></pre></div>
 <h3 id="psycopg2-build-error">psycopg2 build error</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Error: pg_config executable not found.</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Error: pg_config executable not found.</code></pre></div>
 <p>Install libpq-dev package to solve it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install libpq-dev</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install libpq-dev</code></pre></div>
 <p><em>I will update this post every time I face a pitfall I have to remember about.</em></p>
 </div>
 

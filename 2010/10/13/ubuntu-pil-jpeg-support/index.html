@@ -53,9 +53,6 @@ ga('send', 'pageview');
   <li>
       <a href='/blog/'>Blog</a>
     </li>
-  <li>
-      <a href='/about/'>About</a>
-    </li>
   
   </ul>
 </nav>
@@ -116,27 +113,27 @@ One min read
 
     <div class='entry-content'>
   <p>Got an IOError exception, while trying to process image using PIL, with a next error message:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">encoder jpeg not available</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">encoder jpeg not available</code></pre></div>
 <p>PIL is installed within python virtual environment. Figured out, I have no development files for libjpeg installed, so PIL compiles without JPEG support.</p>
 
 <p></p>
 
 <p>The solution is to:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install libjpeg62-dev</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install libjpeg62-dev</code></pre></div>
 <p><strong>Notice:</strong> 62 is from libjpeg version 6.2, so it may vary.</p>
 
 <p>Finally, recompile PIL:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install -U PIL</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install -U PIL</code></pre></div>
 <p>PIL has JPEG support for now and everything works like a charm.</p>
 
 <p><strong>UPDATE</strong>: The method above will not work if you run Ubuntu x86_64.</p>
 
 <p>Since I am now using x86_64 architecture mostly everywhere, I&rsquo;ve faced an issue where I needed to use an approach with symlinking (mentioned in comments) to achieve PNG/JPEG support in PIL:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">cd</span> /usr/lib
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /usr/lib
 $ sudo ln -s x86_64-linux-gnu/libjpeg.so
 $ sudo ln -s x86_64-linux-gnu/libz.so</code></pre></div>
 <p>I also found it more neat to symlink those libs within the virtualenv&rsquo;s (which you obviously use, <a href="http://dimamoroz.com/blog/2-python-virtual-environment-ubuntu/">read this</a> if you do not) so we do not need root access and system is more clean eventually:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /my/env/lib
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /my/env/lib
 $ ln -s /usr/lib/x86_64-linux-gnu/libz.so /my/env/lib</code></pre></div>
 </div>
 

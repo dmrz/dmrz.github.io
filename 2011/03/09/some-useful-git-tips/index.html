@@ -49,9 +49,6 @@ ga('send', 'pageview');
   <li>
       <a href='/blog/'>Blog</a>
     </li>
-  <li>
-      <a href='/about/'>About</a>
-    </li>
   
   </ul>
 </nav>
@@ -118,20 +115,20 @@ One min read
 <h3 id="setting-up-a-remote-git-repository">Setting up a remote git repository</h3>
 
 <p>Firstly we create a bare git repository on the remote server:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh user@remotehost
-<span class="nb">cd</span> /repositories
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh user@remotehost
+cd /repositories
 mkdir project.git
-<span class="nb">cd</span> project.git
+cd project.git
 git --bare init
 exit</code></pre></div>
 <p>Since the remote one is ready, let&rsquo;s change to our local repository and configure it to work with remote origin:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /projects/project
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /projects/project
 git remote add origin ssh://user@remotehost/repositories/project.git
 git config branch.master.remote origin
 git config branch.master.merge refs/heads/master
 git push --all</code></pre></div>
 <p>If you do not have a local git repository, for instance if you setup a new empty project, you can simply clone remote repository:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone ssh://user@remotehost/repositories/project.git</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://user@remotehost/repositories/project.git</code></pre></div>
 <p>It will warn you that you&rsquo;ve cloned an empty repository, but it&rsquo;s okay.</p>
 
 <p>Now we have ready to use local repository, synced with remote origin.</p>
@@ -139,16 +136,16 @@ git push --all</code></pre></div>
 <h3 id="checking-out-branches-from-the-remote-git-repository">Checking out branches from the remote git repository</h3>
 
 <p>To list all available local and remote branches type:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -a</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -a</code></pre></div>
 <p>To check out a needed remote branch:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -t origin/branch_name</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -t origin/branch_name</code></pre></div>
 <p>To pull/push changes from/to remote branch:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git pull origin branch_name
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull origin branch_name
 git push origin branch_name</code></pre></div>
 <h3 id="removing-a-remote-branch">Removing a remote branch</h3>
 
 <p>This will delete some-branch within the remote repository:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push origin :heads/some-branch</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin :heads/some-branch</code></pre></div>
 </div>
 
     

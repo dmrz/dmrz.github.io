@@ -49,9 +49,6 @@ ga('send', 'pageview');
   <li>
       <a href='/blog/'>Blog</a>
     </li>
-  <li>
-      <a href='/about/'>About</a>
-    </li>
   
   </ul>
 </nav>
@@ -128,56 +125,56 @@ I was bootstrapping python virtual environment for Django development on differe
 
 <p>###1. Installing Homebrew.
 Looks weird as I have mentioned above. You can explore a script on the given url if you need explanations.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ruby -e <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go<span class="k">)</span><span class="s2">&#34;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ruby -e <span style="color:#a31515">&#34;</span><span style="color:#00f">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go<span style="color:#00f">)</span><span style="color:#a31515">&#34;</span></code></pre></div>
 <p>This is retrieving a script source from gist and like &ldquo;piping&rdquo; it to the ruby interpereter. It will prompt you for your password (since it requires a write access to /usr/local/). When it&rsquo;s done, you can run brew command to install packages.</p>
 
 <p>###2. Configuring system paths.
 Homebrew installs everything to /usr/local, so we need it to be in the beginning of our $PATH same as python software installed using brew (to override system wide). So we add the next line to our ~/.bashrc (either ~/.bash_profile or ~/.zshrc):</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:/usr/local/share/python:<span class="nv">$PATH</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PATH=/usr/local/bin:/usr/local/share/python:$PATH</code></pre></div>
 <p>###3. Installing and configuring django development environment.
 I can&rsquo;t imagine my daily workflow with python and django without using python virtual environment and I guess so are you.</p>
 
 <p>The first thing I do is updating Python to the latest 2.x version:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ brew install python</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install python</code></pre></div>
 <p>Restart terminal afterwards, to make sure fresh python is used by default.</p>
 
 <p><del>Then I install pip using easy_install, but firstly we check that the correct easy_installed will be used:</del></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ which easy_install
-/usr/local/share/python/easy_install <span class="c1"># This is correct
-</span><span class="c1"></span>$ easy_install pip</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ which easy_install
+/usr/local/share/python/easy_install <span style="color:#008000"># This is correct
+</span><span style="color:#008000"></span>$ easy_install pip</code></pre></div>
 <p><em>UPDATE:</em> As of a version 2.7.5, python package currently has pip pre-installed, so the above snippet is obscure.</p>
 
 <p>When pip is installed, you can follow <a href="http://dimamoroz.com/blog/2-python-virtual-environment-ubuntu/">my simple tutorial</a> and install python virtual environment in the same manner, with only few difference.</p>
 
 <p>We use pip without sudo command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install virtualenv virtualenvwrapper</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install virtualenv virtualenvwrapper</code></pre></div>
 <p>We source from the other path file, so the lines we put to ~/.bashrc (either ~/.bash_profile or ~/.zshrc) are:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh</code></pre></div>
 <p>If you need lazy loading of virtualenvwrapper (makes shell start faster, though tab completion for wrapper is only available after the first command is ran):</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
-<span class="nb">export</span> <span class="nv">VIRTUALENVWRAPPER_SCRIPT</span><span class="o">=</span>/usr/local/bin/virtualenvwrapper.sh
-<span class="nb">source</span> /usr/local/bin/virtualenvwrapper_lazy.sh</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh</code></pre></div>
 <p>And then we restart terminal, so virtualenv can be initialized and we can use virtualenv and virtualenvwrapper as usual.</p>
 
 <p>When I was moving to OSX, I heard a lot about problems installing PIL using pip on macs. I was wondered when I didn&rsquo;t face any problem installing it using brew:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ brew install libjpeg
-$ brew install lcms <span class="c1"># If needed
-</span><span class="c1"></span>$ brew install libtiff <span class="c1"># If needed
-</span><span class="c1"></span>$ pip install PIL</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install libjpeg
+$ brew install lcms <span style="color:#008000"># If needed
+</span><span style="color:#008000"></span>$ brew install libtiff <span style="color:#008000"># If needed
+</span><span style="color:#008000"></span>$ pip install PIL</code></pre></div>
 <p>###4. Installing PostgreSQL.
 I use PostgreSQL, so the following is about how to install and setup PostgreSQL on OSX using brew for my needs. This is totally covered at the <a href="https://gist.github.com/902296">OSX Developer System installation</a>, if you are MySQL user, you can find necessary documentation there as well.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nv">PYTHON</span><span class="o">=</span>/usr/local/bin/python  brew install postgresql
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ PYTHON=/usr/local/bin/python  brew install postgresql
 $ initdb /usr/local/var/postgres
 $ cp /usr/local/Cellar/postgresql/9.0.4/org.postgresql.postgres.plist ~/Library/LaunchAgents/
 $ launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist</code></pre></div>
 <p>This will install posgres, initialize default data, run postgres and make it always running when system starts. You can now check installation by running:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ createdb mytestdb
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ createdb mytestdb
 $ dropdb mytestdb</code></pre></div>
 <p>And it has to be flown smoothly.</p>
 
 <p>Then you can install python postgresql adaptor within your virutalenvironment:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install psycopg2</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install psycopg2</code></pre></div>
 <p>If your setup requires some additional tools or libraries, you can search them using brew search</p>
 </div>
 

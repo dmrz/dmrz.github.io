@@ -19,7 +19,7 @@
       
       <guid>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</guid>
       <description>&lt;p&gt;I was facing the next error with a config variant created using Redmine documentation:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;m&#34;&gt;530&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;.7.0 Must issue a STARTTLS &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; first&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;530 5.7.0 Must issue a STARTTLS command first&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     

@@ -49,9 +49,6 @@ ga('send', 'pageview');
   <li>
       <a href='/blog/'>Blog</a>
     </li>
-  <li>
-      <a href='/about/'>About</a>
-    </li>
   
   </ul>
 </nav>
@@ -112,21 +109,21 @@ One min read
 
     <div class='entry-content'>
   <p>I was facing the next error with a config variant created using Redmine documentation:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">530</span> <span class="m">5</span>.7.0 Must issue a STARTTLS <span class="nb">command</span> first</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">530 5.7.0 Must issue a STARTTLS command first</code></pre></div>
 <p></p>
 
 <p>After googling I&rsquo;ve implemented a working configuration, here it is:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">production<span class="p">:</span><span class="w">
-</span><span class="w">    </span>delivery_method<span class="p">:</span><span class="w"> </span><span class="p">:</span>smtp<span class="w">
-</span><span class="w">    </span>smtp_settings<span class="p">:</span><span class="w">
-</span><span class="w">    </span>tls<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">    </span>enable_starttls_auto<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">    </span>address<span class="p">:</span><span class="w"> </span><span class="s2">&#34;smtp.gmail.com&#34;</span><span class="w">
-</span><span class="w">    </span>port<span class="p">:</span><span class="w"> </span><span class="m">587</span><span class="w">
-</span><span class="w">    </span>domain<span class="p">:</span><span class="w"> </span><span class="s2">&#34;mydomain.com&#34;</span><span class="w">
-</span><span class="w">    </span>authentication<span class="p">:</span><span class="w"> </span><span class="p">:</span>login<span class="w">
-</span><span class="w">    </span>user_name<span class="p">:</span><span class="w"> </span><span class="s2">&#34;noreply@mydomain.com&#34;</span><span class="w">
-</span><span class="w">    </span>password<span class="p">:</span><span class="w"> </span><span class="s2">&#34;mypassword&#34;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">production:
+    delivery_method: :smtp
+    smtp_settings:
+    tls: <span style="color:#00f">true</span>
+    enable_starttls_auto: <span style="color:#00f">true</span>
+    address: <span style="color:#a31515">&#34;smtp.gmail.com&#34;</span>
+    port: 587
+    domain: <span style="color:#a31515">&#34;mydomain.com&#34;</span>
+    authentication: :login
+    user_name: <span style="color:#a31515">&#34;noreply@mydomain.com&#34;</span>
+    password: <span style="color:#a31515">&#34;mypassword&#34;</span></code></pre></div>
 </div>
 
     
