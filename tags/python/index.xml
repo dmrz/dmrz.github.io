@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Django local development with nginx on OSX | Dima Moroz</title>
+      <title>Django local development with nginx on OSX</title>
       <link>https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title>Django development environment on OSX | Dima Moroz</title>
+      <title>Django development environment on OSX</title>
       <link>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</link>
       <pubDate>Tue, 06 Sep 2011 15:05:00 +0200</pubDate>
       
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Setting up django settings environment within a python script | Dima Moroz</title>
+      <title>Setting up django settings environment within a python script</title>
       <link>https://dimamoroz.com/2011/03/14/setting-django-settings-environment-within-python-script/</link>
       <pubDate>Mon, 14 Mar 2011 12:55:00 +0200</pubDate>
       
@@ -48,7 +48,7 @@ import settings from django.core.management import setup_environ setup_environ(s
     </item>
     
     <item>
-      <title>Ubuntu Python virtual environments pitfalls | Dima Moroz</title>
+      <title>Ubuntu Python virtual environments pitfalls</title>
       <link>https://dimamoroz.com/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
@@ -61,7 +61,7 @@ import settings from django.core.management import setup_environ setup_environ(s
     </item>
     
     <item>
-      <title>Ubuntu PIL JPEG support | Dima Moroz</title>
+      <title>Ubuntu PIL JPEG support</title>
       <link>https://dimamoroz.com/2010/10/13/ubuntu-pil-jpeg-support/</link>
       <pubDate>Wed, 13 Oct 2010 11:49:00 +0200</pubDate>
       
@@ -74,7 +74,7 @@ import settings from django.core.management import setup_environ setup_environ(s
     </item>
     
     <item>
-      <title>Python virtual environment on Ubuntu | Dima Moroz</title>
+      <title>Python virtual environment on Ubuntu</title>
       <link>https://dimamoroz.com/2010/10/08/python-virtual-environment-ubuntu/</link>
       <pubDate>Fri, 08 Oct 2010 09:34:00 +0200</pubDate>
       
@@ -95,7 +95,7 @@ import settings from django.core.management import setup_environ setup_environ(s
     </item>
     
     <item>
-      <title>Hello World | Dima Moroz</title>
+      <title>Hello World</title>
       <link>https://dimamoroz.com/2010/04/30/hello-world/</link>
       <pubDate>Fri, 30 Apr 2010 12:07:00 +0200</pubDate>
       
