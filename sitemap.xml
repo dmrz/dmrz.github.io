@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dimamoroz.com/</loc>
+    <lastmod>2018-01-01T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dimamoroz.com/about/</loc>
     <lastmod>2018-01-01T00:00:00+02:00</lastmod>
   </url>
@@ -60,11 +65,6 @@
   <url>
     <loc>https://dimamoroz.com/2010/04/30/hello-world/</loc>
     <lastmod>2010-04-30T12:07:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dimamoroz.com/</loc>
-    <lastmod>2018-01-01T00:00:00+02:00</lastmod>
   </url>
   
   <url>

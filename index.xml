@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dima Moroz</title>
+    <title>Home on Dima Moroz</title>
     <link>https://dimamoroz.com/</link>
-    <description>Recent content on Dima Moroz</description>
+    <description>Recent content in Home on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>2018 © Dima Moroz</copyright>
     <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/index.xml" rel="self" type="application/rss+xml" />
