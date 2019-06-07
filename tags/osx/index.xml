@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Osx on Dima Moroz</title>
+    <title>osx on Dima Moroz</title>
     <link>https://dimamoroz.com/tags/osx/</link>
-    <description>Recent content in Osx on Dima Moroz</description>
+    <description>Recent content in osx on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2018 © Dima Moroz</copyright>
     <lastBuildDate>Fri, 09 Sep 2011 16:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/tags/osx/index.xml" rel="self" type="application/rss+xml" />
@@ -23,8 +21,7 @@
 &lt;p&gt;Post install instruction explains how to run nginx on starup by adding it&amp;rsquo;s launchd config to &lt;em&gt;~/Library/LaunchAgents/&lt;/em&gt; and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo nginx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to &lt;em&gt;/Library/LaunchDaemons/&lt;/em&gt; (so it runs even before any user is logged in):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ &lt;span style=&#34;color:#008000&#34;&gt;# nginx version number may vary&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -33,9 +30,7 @@
       <pubDate>Tue, 06 Sep 2011 15:05:00 +0200</pubDate>
       
       <guid>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</guid>
-      <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,79 +1,75 @@
 <!DOCTYPE html>
-<html lang='en'>
-
-<head>
+<html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow this link, there is a really great tutorial about OSX Developer System installation.
-
-'>
+<meta name='description' content='This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow this link, there is a really great tutorial about OSX Developer System installation.'>
+<meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='Django development environment on OSX • Dima Moroz'>
-<meta property='og:description' content='This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow this link, there is a really great tutorial about OSX Developer System installation.
-
-'>
+<meta property='og:description' content='This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow this link, there is a really great tutorial about OSX Developer System installation.'>
 <meta property='og:url' content='https://dimamoroz.com/2011/09/06/django-development-environment-osx/'>
 <meta property='og:site_name' content='Dima Moroz'>
-<meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:tag' content='django'><meta property='article:tag' content='python'><meta property='article:tag' content='mac'><meta property='article:tag' content='osx'><meta property='article:published_time' content='2011-09-06T15:05:00&#43;02:00'/><meta property='article:modified_time' content='2011-09-06T15:05:00&#43;02:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='django'><meta property='article:tag' content='python'><meta property='article:tag' content='mac'><meta property='article:tag' content='osx'><meta property='article:published_time' content='2011-09-06T15:05:00&#43;02:00'/><meta property='article:modified_time' content='2011-09-06T15:05:00&#43;02:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.32.2" />
+<meta name="generator" content="Hugo 0.55.6" />
 
   <title>Django development environment on OSX • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2011/09/06/django-development-environment-osx/'>
   
   
   <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.c54db339.css'>
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-11219276-3', 'auto');
-ga('send', 'pageview');
+<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-11219276-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
 
 </head>
-
-
 <body class='page type-blog'>
-  <div class='site'>
 
-    <a class='screen-reader' href='#main'>Skip to Content</a>
-
-    <header id='header' class='header-container'>
-      <div class='header site-header'>
-        <nav id='main-menu' class='main-menu-container' aria-label='Main Menu'>
-  <ul class='main-menu'>
-  <li>
-      <a href='/'>Home</a>
-    </li>
-  <li>
-      <a href='/blog/'>Blog</a>
-    </li>
-  
-  </ul>
-</nav>
-
-        <div class='header-info'>
-          
-          <p class='site-title title'>Dima Moroz</p>
-          
-          <p class='site-description subtitle'></p>
-        </div>
+  <div class='site'><a class='screen-reader-text' href='#content'>Skip to Content</a><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/blog/'>Blog</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
       </div>
-    </header>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Dima Moroz</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
 
 
-<main id='main' class='main'>
-  <article lang='en' class='entry'>
-    <header class='header-container'>
-  <div class='header entry-header'>
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
     <div class='header-info'>
       <h1 class='title'>Django development environment on OSX</h1>
       
 
     </div>
-    
-<div class='meta'>
+    <div class='entry-meta'>
   <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -82,8 +78,8 @@ ga('send', 'pageview');
   <line x1="3" y1="10" x2="21" y2="10"/>
   
 </svg>
-<span class='screen-reader'>Posted on </span>
-  <time class='date' datetime='2011-09-06T15:05:00&#43;02:00'>2011, Sep 06</time>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2011-09-06T15:05:00&#43;02:00'>2011, Sep 06</time>
 </span>
 
   
@@ -104,13 +100,11 @@ ga('send', 'pageview');
   </div>
 </header>
 
-    
-    
+  
+  
 
-    <div class='entry-content'>
-  <p>This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow <a href="https://gist.github.com/902296">this link</a>, there is a really great tutorial about OSX Developer System installation.</p>
-
-<p></p>
+  <div class='container entry-content'>
+  <p>This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow <a href="https://gist.github.com/902296" target="_blank">this link</a>, there is a really great tutorial about OSX Developer System installation.</p>
 
 <p>I wrote a simple how-to about installing python virtual environment on Ubuntu, almost a year ago. Later it was extended with few posts about popular pitfalls and general problems. Through this year,
 I was bootstrapping python virtual environment for Django development on different ubuntu/debian/gentoo boxes plenty of times and everything was always going fine. So this how-to is really helpful for me and (I hope) for you.</p>
@@ -119,9 +113,9 @@ I was bootstrapping python virtual environment for Django development on differe
 
 <p>I am really new to the mac and os x world, so I can be deeply mistaken. I have followed the steps in this tutorial to setup development environment for Django and everything works like a charm, though. So practical part of this post seems to be working. I am always opened for your feedbacks and fixes.</p>
 
-<p>OS X has UNIX shell in the core, almost the same as the one I used to on Linux (but with some not that often valuable differences, e.g. built-in commands are BSD-like), so there is no reason to have any problem to run python scripts and other console-related-stuff. The weak point is handling system-wide dependencies, since OS X has no native package manager or so. You can go dirty old school and compile missing dependencies manually. But it is XXI century outdoors, we have a lot of smart guys, who are ready to fill the gaps of the world&rsquo;s most advanced operating system. So there are some crafty third-party sort-of-package-managers for OS X, like <a href="http://www.macports.org/">Macports</a>, <a href="http://www.finkproject.org/">Fink</a>, <a href="http://mxcl.github.com/homebrew/">Homebrew</a> and others. I chose Homebrew, as the most spoken-about in communities I follow, with positive feedbacks. I can admit it&rsquo;s a mainstream. It is pretty easy and weird (as for a person who was living in a Linux world and used to tools like apt and emerge) to install. I was doing this install on both Snow Leopard and Lion distributions (with only one difference in installing graphicsmagick using Homebrew on Lion).</p>
+<p>OS X has UNIX shell in the core, almost the same as the one I used to on Linux (but with some not that often valuable differences, e.g. built-in commands are BSD-like), so there is no reason to have any problem to run python scripts and other console-related-stuff. The weak point is handling system-wide dependencies, since OS X has no native package manager or so. You can go dirty old school and compile missing dependencies manually. But it is XXI century outdoors, we have a lot of smart guys, who are ready to fill the gaps of the world&rsquo;s most advanced operating system. So there are some crafty third-party sort-of-package-managers for OS X, like <a href="http://www.macports.org/" target="_blank">Macports</a>, <a href="http://www.finkproject.org/" target="_blank">Fink</a>, <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a> and others. I chose Homebrew, as the most spoken-about in communities I follow, with positive feedbacks. I can admit it&rsquo;s a mainstream. It is pretty easy and weird (as for a person who was living in a Linux world and used to tools like apt and emerge) to install. I was doing this install on both Snow Leopard and Lion distributions (with only one difference in installing graphicsmagick using Homebrew on Lion).</p>
 
-<p>So the first thing we do is checking for requirements, we need to have Xcode 4 installed (it is free of charge for Lion, you can get it from the App Store) and X11 as Homebrew installation guide says (it is installed by default in Snow Leopard). Actually the main requirement of Xcode is that it provides gcc and many people complain about they have to install a huge package only to have gcc installed. There is a gcc implementation without installing Xcode <a href="https://github.com/kennethreitz/osx-gcc-installer">osx-gcc-installer</a> but I did not try it though (I was noticed about this one on twitter other day, so I suppose it is immature, but probably a really good way to go in the nearest future). If requirements are satisfied, we can go further with installation:</p>
+<p>So the first thing we do is checking for requirements, we need to have Xcode 4 installed (it is free of charge for Lion, you can get it from the App Store) and X11 as Homebrew installation guide says (it is installed by default in Snow Leopard). Actually the main requirement of Xcode is that it provides gcc and many people complain about they have to install a huge package only to have gcc installed. There is a gcc implementation without installing Xcode <a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank">osx-gcc-installer</a> but I did not try it though (I was noticed about this one on twitter other day, so I suppose it is immature, but probably a really good way to go in the nearest future). If requirements are satisfied, we can go further with installation:</p>
 
 <p>###1. Installing Homebrew.
 Looks weird as I have mentioned above. You can explore a script on the given url if you need explanations.</p>
@@ -140,11 +134,11 @@ I can&rsquo;t imagine my daily workflow with python and django without using pyt
 
 <p><del>Then I install pip using easy_install, but firstly we check that the correct easy_installed will be used:</del></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ which easy_install
-/usr/local/share/python/easy_install <span style="color:#008000"># This is correct
-</span><span style="color:#008000"></span>$ easy_install pip</code></pre></div>
+/usr/local/share/python/easy_install <span style="color:#008000"># This is correct</span>
+$ easy_install pip</code></pre></div>
 <p><em>UPDATE:</em> As of a version 2.7.5, python package currently has pip pre-installed, so the above snippet is obscure.</p>
 
-<p>When pip is installed, you can follow <a href="http://dimamoroz.com/blog/2-python-virtual-environment-ubuntu/">my simple tutorial</a> and install python virtual environment in the same manner, with only few difference.</p>
+<p>When pip is installed, you can follow <a href="http://dimamoroz.com/blog/2-python-virtual-environment-ubuntu/" target="_blank">my simple tutorial</a> and install python virtual environment in the same manner, with only few difference.</p>
 
 <p>We use pip without sudo command:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install virtualenv virtualenvwrapper</code></pre></div>
@@ -159,11 +153,11 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh</code></pre></div>
 
 <p>When I was moving to OSX, I heard a lot about problems installing PIL using pip on macs. I was wondered when I didn&rsquo;t face any problem installing it using brew:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install libjpeg
-$ brew install lcms <span style="color:#008000"># If needed
-</span><span style="color:#008000"></span>$ brew install libtiff <span style="color:#008000"># If needed
-</span><span style="color:#008000"></span>$ pip install PIL</code></pre></div>
+$ brew install lcms <span style="color:#008000"># If needed</span>
+$ brew install libtiff <span style="color:#008000"># If needed</span>
+$ pip install PIL</code></pre></div>
 <p>###4. Installing PostgreSQL.
-I use PostgreSQL, so the following is about how to install and setup PostgreSQL on OSX using brew for my needs. This is totally covered at the <a href="https://gist.github.com/902296">OSX Developer System installation</a>, if you are MySQL user, you can find necessary documentation there as well.</p>
+I use PostgreSQL, so the following is about how to install and setup PostgreSQL on OSX using brew for my needs. This is totally covered at the <a href="https://gist.github.com/902296" target="_blank">OSX Developer System installation</a>, if you are MySQL user, you can find necessary documentation there as well.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ PYTHON=/usr/local/bin/python  brew install postgresql
 $ initdb /usr/local/var/postgres
 $ cp /usr/local/Cellar/postgresql/9.0.4/org.postgresql.postgres.plist ~/Library/LaunchAgents/
@@ -178,27 +172,24 @@ $ dropdb mytestdb</code></pre></div>
 <p>If your setup requires some additional tools or libraries, you can search them using brew search</p>
 </div>
 
-    
-<footer class='entry-footer-container'>
-  <div class='entry-footer'>
-  <div class='tags'>
-  <span class='taxonomyTerm-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-</span>
-  <span class='screen-reader'>Tags: </span><a class='tag' href='/tags/django'>Django</a>, <a class='tag' href='/tags/python'>Python</a>, <a class='tag' href='/tags/mac'>Mac</a>, <a class='tag' href='/tags/osx'>Osx</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/django/'>django</a>, <a class='tag' href='/tags/python/'>python</a>, <a class='tag' href='/tags/mac/'>mac</a>, <a class='tag' href='/tags/osx/'>osx</a></div>
 
   </div>
 </footer>
 
 
-  </article>
-  
-<nav class='entry-nav-container'>
-  <div class='entry-nav'><div class='prev-entry'>
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
       <a href='/2011/03/14/setting-django-settings-environment-within-python-script/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
@@ -207,10 +198,10 @@ $ dropdb mytestdb</code></pre></div>
   
 </svg>
  Previous</span>
-        <span class='screen-reader'>Previous post: </span>Setting up django settings environment within a python script</a>
-    </div><div class='next-entry'>
+        <span class='screen-reader-text'>Previous post: </span>Setting up django settings environment within a python script</a>
+    </div><div class='next-entry sep-before'>
       <a href='/2011/09/09/django-local-development-nginx-osx/'>
-        <span class='screen-reader'>Next post: </span>Django local development with nginx on OSX<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+        <span class='screen-reader-text'>Next post: </span>Django local development with nginx on OSX<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="4" y1="12" x2="20" y2="12"/>
   <polyline points="14 6 20 12 14 18"/>
@@ -221,10 +212,11 @@ $ dropdb mytestdb</code></pre></div>
     </div></div>
 </nav>
 
-  
-<div class='comments-container'>
-  <div id="disqus_thread"></div>
-<script>
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -244,16 +236,16 @@ $ dropdb mytestdb</code></pre></div>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
+  </div>
+</section>
 
-</main>
+      </main>
 
-    <footer id='footer' class='footer-container'>
-      <div class='footer'>
-        <div class='social-menu-container'>
-  <nav aria-label='Social Menu'>
-    <ul class='social-menu'><li>
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
         <a href='https://github.com/dmrz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
   
@@ -261,7 +253,7 @@ $ dropdb mytestdb</code></pre></div>
 </a>
       </li><li>
         <a href='https://twitter.com/dimrz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
   
@@ -269,7 +261,7 @@ $ dropdb mytestdb</code></pre></div>
 </a>
       </li><li>
         <a href='https://instagram.com/dmrz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -279,24 +271,29 @@ $ dropdb mytestdb</code></pre></div>
 </a>
       </li><li>
         <a href='https://linkedin.com/in/dimamoroz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
-  <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
   
 </svg>
 </a>
       </li></ul>
   </nav>
-</div>
-        <div class='copyright'>
-  <p>2018 © Dima Moroz
-  </p>
+</section><div class='copyright'>
+  <p> &copy; 2010-2019 Dima Moroz </p>
 </div>
 
-      </div>
-    </footer>
+        </div>
+      </footer>
 
-  </div><script src='/assets/js/main.5871befd.js'></script></body>
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.67d669ac.js'></script><script src='/js/custom.js'></script>
+
+</body>
 
 </html>
 

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
-
-<head>
+<html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='Installing nginx using brew is quite easy:
@@ -9,8 +7,8 @@ $ brew install nginx
 Post install instruction explains how to run nginx on starup by adding it&rsquo;s launchd config to ~/Library/LaunchAgents/ and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:
 $ sudo nginx
 But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to /Library/LaunchDaemons/ (so it runs even before any user is logged in):
-$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary
-'>
+$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary'>
+<meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='Django local development with nginx on OSX • Dima Moroz'>
 <meta property='og:description' content='Installing nginx using brew is quite easy:
@@ -18,70 +16,70 @@ $ brew install nginx
 Post install instruction explains how to run nginx on starup by adding it&rsquo;s launchd config to ~/Library/LaunchAgents/ and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:
 $ sudo nginx
 But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to /Library/LaunchDaemons/ (so it runs even before any user is logged in):
-$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary
-'>
+$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary'>
 <meta property='og:url' content='https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/'>
 <meta property='og:site_name' content='Dima Moroz'>
-<meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:tag' content='django'><meta property='article:tag' content='python'><meta property='article:tag' content='mac'><meta property='article:tag' content='osx'><meta property='article:tag' content='nginx'><meta property='article:published_time' content='2011-09-09T16:30:00&#43;02:00'/><meta property='article:modified_time' content='2011-09-09T16:30:00&#43;02:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='django'><meta property='article:tag' content='python'><meta property='article:tag' content='mac'><meta property='article:tag' content='osx'><meta property='article:tag' content='nginx'><meta property='article:published_time' content='2011-09-09T16:30:00&#43;02:00'/><meta property='article:modified_time' content='2011-09-09T16:30:00&#43;02:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.32.2" />
+<meta name="generator" content="Hugo 0.55.6" />
 
   <title>Django local development with nginx on OSX • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/'>
   
   
   <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.c54db339.css'>
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-11219276-3', 'auto');
-ga('send', 'pageview');
+<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-11219276-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
 
 </head>
-
-
 <body class='page type-blog'>
-  <div class='site'>
 
-    <a class='screen-reader' href='#main'>Skip to Content</a>
-
-    <header id='header' class='header-container'>
-      <div class='header site-header'>
-        <nav id='main-menu' class='main-menu-container' aria-label='Main Menu'>
-  <ul class='main-menu'>
-  <li>
-      <a href='/'>Home</a>
-    </li>
-  <li>
-      <a href='/blog/'>Blog</a>
-    </li>
-  
-  </ul>
-</nav>
-
-        <div class='header-info'>
-          
-          <p class='site-title title'>Dima Moroz</p>
-          
-          <p class='site-description subtitle'></p>
-        </div>
+  <div class='site'><a class='screen-reader-text' href='#content'>Skip to Content</a><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/blog/'>Blog</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
       </div>
-    </header>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Dima Moroz</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
 
 
-<main id='main' class='main'>
-  <article lang='en' class='entry'>
-    <header class='header-container'>
-  <div class='header entry-header'>
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
     <div class='header-info'>
       <h1 class='title'>Django local development with nginx on OSX</h1>
       
 
     </div>
-    
-<div class='meta'>
+    <div class='entry-meta'>
   <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -90,8 +88,8 @@ ga('send', 'pageview');
   <line x1="3" y1="10" x2="21" y2="10"/>
   
 </svg>
-<span class='screen-reader'>Posted on </span>
-  <time class='date' datetime='2011-09-09T16:30:00&#43;02:00'>2011, Sep 09</time>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2011-09-09T16:30:00&#43;02:00'>2011, Sep 09</time>
 </span>
 
   
@@ -112,18 +110,16 @@ ga('send', 'pageview');
   </div>
 </header>
 
-    
-    
+  
+  
 
-    <div class='entry-content'>
+  <div class='container entry-content'>
   <p>Installing nginx using brew is quite easy:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install nginx</code></pre></div>
 <p>Post install instruction explains how to run nginx on starup by adding it&rsquo;s launchd config to <em>~/Library/LaunchAgents/</em> and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nginx</code></pre></div>
 <p>But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to <em>/Library/LaunchDaemons/</em> (so it runs even before any user is logged in):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ # nginx version number may vary</code></pre></div>
-<p></p>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ <span style="color:#008000"># nginx version number may vary</span></code></pre></div>
 <p>And slightly edit it, so it finally looks like:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#00f">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#00f">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
@@ -148,7 +144,7 @@ ga('send', 'pageview');
     &lt;/dict&gt;
 &lt;/plist&gt;</code></pre></div>
 <p>I set a Label option to nginx, so I can easily restart it with:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo launchctl stop nginx # this will stop and start nginx again since OnDemand option is set to false by default</code></pre></div>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo launchctl stop nginx <span style="color:#008000"># this will stop and start nginx again since OnDemand option is set to false by default</span></code></pre></div>
 <p>UserName is set to root, so nginx runs on port 80. If you need to pass some additional arguments to nginx executable, you can list them in ProgramArguments.</p>
 
 <p>Further, I edit nginx config, which is located at <em>/usr/local/etc/nginx/nginx.conf</em> and add my generic code snippet I use everywhere for local Django development with nginx (it&rsquo;s a server directive so I usually add it before the last closing bracket):</p>
@@ -183,9 +179,9 @@ ga('send', 'pageview');
         <span style="color:#00f">client_max_body_size</span> 100m;
     }
 }</code></pre></div>
-<p>I have a personal development convention, that all local Django projects are located within <em>~/Projects</em> directory, virtual environments are located within <em>~/.virtualenvs</em> and virtual environment name is similar to it&rsquo;s corresponding project name. Project assets are located within <em>static</em> directory in the project root and uploaded files are located within <em>media</em>. In addition to above, nginx also serves django admin static files, <a href="http://pypi.python.org/pypi/django-debug-toolbar">django-debug-toolbar</a> and favicon alias. Logging access is disabled until I need it. If you are going to use this config, set appropriate values to <em>$home_dir</em>, <em>$project_path</em>, <em>$python_version</em> and <em>$virtualenv_path</em> variables.</p>
+<p>I have a personal development convention, that all local Django projects are located within <em>~/Projects</em> directory, virtual environments are located within <em>~/.virtualenvs</em> and virtual environment name is similar to it&rsquo;s corresponding project name. Project assets are located within <em>static</em> directory in the project root and uploaded files are located within <em>media</em>. In addition to above, nginx also serves django admin static files, <a href="http://pypi.python.org/pypi/django-debug-toolbar" target="_blank">django-debug-toolbar</a> and favicon alias. Logging access is disabled until I need it. If you are going to use this config, set appropriate values to <em>$home_dir</em>, <em>$project_path</em>, <em>$python_version</em> and <em>$virtualenv_path</em> variables.</p>
 
-<p>My local DNS transfers all requests made to *.dev to 127.0.0.1, server_name captures project name in domain name and all project static files are served with nginx. For instance I have a project named <em>mydjangoapp</em> and it&rsquo;s development server (<em>python manage.py runserver</em>) is currently running, so I just open <a href="http://mydjangoapp.dev">http://mydjangoapp.dev</a> in the browser and it works.</p>
+<p>My local DNS transfers all requests made to *.dev to 127.0.0.1, server_name captures project name in domain name and all project static files are served with nginx. For instance I have a project named <em>mydjangoapp</em> and it&rsquo;s development server (<em>python manage.py runserver</em>) is currently running, so I just open <a href="http://mydjangoapp.dev" target="_blank">http://mydjangoapp.dev</a> in the browser and it works.</p>
 
 <p>If you do not have a local DNS that will map *.dev to 127.0.0.1, you will have do that in your <em>/etc/hosts</em> file.</p>
 
@@ -193,27 +189,24 @@ ga('send', 'pageview');
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo launchctl load -w /Library/LaunchDaemons/org.nginx.nginx.plist</code></pre></div>
 </div>
 
-    
-<footer class='entry-footer-container'>
-  <div class='entry-footer'>
-  <div class='tags'>
-  <span class='taxonomyTerm-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-</span>
-  <span class='screen-reader'>Tags: </span><a class='tag' href='/tags/django'>Django</a>, <a class='tag' href='/tags/python'>Python</a>, <a class='tag' href='/tags/mac'>Mac</a>, <a class='tag' href='/tags/osx'>Osx</a>, <a class='tag' href='/tags/nginx'>Nginx</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/django/'>django</a>, <a class='tag' href='/tags/python/'>python</a>, <a class='tag' href='/tags/mac/'>mac</a>, <a class='tag' href='/tags/osx/'>osx</a>, <a class='tag' href='/tags/nginx/'>nginx</a></div>
 
   </div>
 </footer>
 
 
-  </article>
-  
-<nav class='entry-nav-container'>
-  <div class='entry-nav'><div class='prev-entry'>
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
       <a href='/2011/09/06/django-development-environment-osx/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
@@ -222,14 +215,15 @@ ga('send', 'pageview');
   
 </svg>
  Previous</span>
-        <span class='screen-reader'>Previous post: </span>Django development environment on OSX</a>
+        <span class='screen-reader-text'>Previous post: </span>Django development environment on OSX</a>
     </div></div>
 </nav>
 
-  
-<div class='comments-container'>
-  <div id="disqus_thread"></div>
-<script>
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -249,16 +243,16 @@ ga('send', 'pageview');
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
+  </div>
+</section>
 
-</main>
+      </main>
 
-    <footer id='footer' class='footer-container'>
-      <div class='footer'>
-        <div class='social-menu-container'>
-  <nav aria-label='Social Menu'>
-    <ul class='social-menu'><li>
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
         <a href='https://github.com/dmrz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
   
@@ -266,7 +260,7 @@ ga('send', 'pageview');
 </a>
       </li><li>
         <a href='https://twitter.com/dimrz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
   
@@ -274,7 +268,7 @@ ga('send', 'pageview');
 </a>
       </li><li>
         <a href='https://instagram.com/dmrz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -284,24 +278,29 @@ ga('send', 'pageview');
 </a>
       </li><li>
         <a href='https://linkedin.com/in/dimamoroz' target='_blank' rel='noopener'>
-          <span class='screen-reader'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
-  <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
   
 </svg>
 </a>
       </li></ul>
   </nav>
-</div>
-        <div class='copyright'>
-  <p>2018 © Dima Moroz
-  </p>
+</section><div class='copyright'>
+  <p> &copy; 2010-2019 Dima Moroz </p>
 </div>
 
-      </div>
-    </footer>
+        </div>
+      </footer>
 
-  </div><script src='/assets/js/main.5871befd.js'></script></body>
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.67d669ac.js'></script><script src='/js/custom.js'></script>
+
+</body>
 
 </html>
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ssh on Dima Moroz</title>
+    <title>ssh on Dima Moroz</title>
     <link>https://dimamoroz.com/tags/ssh/</link>
-    <description>Recent content in Ssh on Dima Moroz</description>
+    <description>Recent content in ssh on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2018 © Dima Moroz</copyright>
     <lastBuildDate>Thu, 09 Dec 2010 12:06:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />

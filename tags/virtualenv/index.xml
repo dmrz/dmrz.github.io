@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virtualenv on Dima Moroz</title>
+    <title>virtualenv on Dima Moroz</title>
     <link>https://dimamoroz.com/tags/virtualenv/</link>
-    <description>Recent content in Virtualenv on Dima Moroz</description>
+    <description>Recent content in virtualenv on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2018 © Dima Moroz</copyright>
     <lastBuildDate>Sat, 04 Dec 2010 12:12:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
@@ -20,9 +18,7 @@
       <guid>https://dimamoroz.com/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</guid>
       <description>&lt;p&gt;I always face several pitfalls, while creating isolated python environment on my laptop, where i&amp;rsquo;m running Ubuntu.&lt;/p&gt;
 
-&lt;p&gt;So decided to make a memory note how to fight them, probably it can be helpful to anyone else.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;So decided to make a memory note how to fight them, probably it can be helpful to anyone else.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,14 +32,12 @@
 &lt;p&gt;Who are those lads?&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenv&#34;&gt;virtualenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenvwrapper&#34;&gt;virtualenvwrapper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/pip&#34;&gt;pip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenv&#34; target=&#34;_blank&#34;&gt;virtualenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenvwrapper&#34; target=&#34;_blank&#34;&gt;virtualenvwrapper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/pip&#34; target=&#34;_blank&#34;&gt;pip&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;If you are not an Ubuntu user, you should better read this &lt;a href=&#34;http://mathematism.com/2009/jul/30/presentation-pip-and-virtualenv/&#34;&gt;Presentation: pip and virtualenv&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;If you are not an Ubuntu user, you should better read this &lt;a href=&#34;http://mathematism.com/2009/jul/30/presentation-pip-and-virtualenv/&#34; target=&#34;_blank&#34;&gt;Presentation: pip and virtualenv&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

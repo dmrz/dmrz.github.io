@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pil on Dima Moroz</title>
+    <title>pil on Dima Moroz</title>
     <link>https://dimamoroz.com/tags/pil/</link>
-    <description>Recent content in Pil on Dima Moroz</description>
+    <description>Recent content in pil on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2018 © Dima Moroz</copyright>
     <lastBuildDate>Wed, 13 Oct 2010 11:49:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/tags/pil/index.xml" rel="self" type="application/rss+xml" />
@@ -20,9 +18,7 @@
       <guid>https://dimamoroz.com/2010/10/13/ubuntu-pil-jpeg-support/</guid>
       <description>&lt;p&gt;Got an IOError exception, while trying to process image using PIL, with a next error message:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;encoder jpeg not available&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;PIL is installed within python virtual environment. Figured out, I have no development files for libjpeg installed, so PIL compiles without JPEG support.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;PIL is installed within python virtual environment. Figured out, I have no development files for libjpeg installed, so PIL compiles without JPEG support.&lt;/p&gt;</description>
     </item>
     
   </channel>

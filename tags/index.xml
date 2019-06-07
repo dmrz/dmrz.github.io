@@ -5,15 +5,13 @@
     <link>https://dimamoroz.com/tags/</link>
     <description>Recent content in Tags on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>2018 © Dima Moroz</copyright>
     <lastBuildDate>Fri, 09 Sep 2011 16:30:00 +0200</lastBuildDate>
     
 	<atom:link href="https://dimamoroz.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Django</title>
+      <title>django</title>
       <link>https://dimamoroz.com/tags/django/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
@@ -22,25 +20,7 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>https://dimamoroz.com/tags/git/</link>
-      <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://dimamoroz.com/tags/linux/</link>
-      <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
+      <title>mac</title>
       <link>https://dimamoroz.com/tags/mac/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
@@ -49,7 +29,7 @@
     </item>
     
     <item>
-      <title>Nginx</title>
+      <title>nginx</title>
       <link>https://dimamoroz.com/tags/nginx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
@@ -58,7 +38,7 @@
     </item>
     
     <item>
-      <title>Osx</title>
+      <title>osx</title>
       <link>https://dimamoroz.com/tags/osx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
@@ -67,34 +47,7 @@
     </item>
     
     <item>
-      <title>Pil</title>
-      <link>https://dimamoroz.com/tags/pil/</link>
-      <pubDate>Wed, 13 Oct 2010 11:49:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/tags/pil/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pip</title>
-      <link>https://dimamoroz.com/tags/pip/</link>
-      <pubDate>Fri, 08 Oct 2010 09:34:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/tags/pip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pitfalls</title>
-      <link>https://dimamoroz.com/tags/pitfalls/</link>
-      <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/tags/pitfalls/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
+      <title>python</title>
       <link>https://dimamoroz.com/tags/python/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
@@ -103,7 +56,7 @@
     </item>
     
     <item>
-      <title>Rails</title>
+      <title>rails</title>
       <link>https://dimamoroz.com/tags/rails/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
@@ -112,7 +65,7 @@
     </item>
     
     <item>
-      <title>Redmine</title>
+      <title>redmine</title>
       <link>https://dimamoroz.com/tags/redmine/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
@@ -121,16 +74,7 @@
     </item>
     
     <item>
-      <title>Rsa</title>
-      <link>https://dimamoroz.com/tags/rsa/</link>
-      <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
-      
-      <guid>https://dimamoroz.com/tags/rsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby</title>
+      <title>ruby</title>
       <link>https://dimamoroz.com/tags/ruby/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
@@ -139,16 +83,25 @@
     </item>
     
     <item>
-      <title>Ssh</title>
-      <link>https://dimamoroz.com/tags/ssh/</link>
-      <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
+      <title>git</title>
+      <link>https://dimamoroz.com/tags/git/</link>
+      <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/ssh/</guid>
+      <guid>https://dimamoroz.com/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tips</title>
+      <title>linux</title>
+      <link>https://dimamoroz.com/tags/linux/</link>
+      <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tips</title>
       <link>https://dimamoroz.com/tags/tips/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
@@ -157,7 +110,34 @@
     </item>
     
     <item>
-      <title>Ubuntu</title>
+      <title>rsa</title>
+      <link>https://dimamoroz.com/tags/rsa/</link>
+      <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/tags/rsa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://dimamoroz.com/tags/ssh/</link>
+      <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pitfalls</title>
+      <link>https://dimamoroz.com/tags/pitfalls/</link>
+      <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/tags/pitfalls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
       <link>https://dimamoroz.com/tags/ubuntu/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
@@ -166,11 +146,29 @@
     </item>
     
     <item>
-      <title>Virtualenv</title>
+      <title>virtualenv</title>
       <link>https://dimamoroz.com/tags/virtualenv/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
       <guid>https://dimamoroz.com/tags/virtualenv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pil</title>
+      <link>https://dimamoroz.com/tags/pil/</link>
+      <pubDate>Wed, 13 Oct 2010 11:49:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/tags/pil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pip</title>
+      <link>https://dimamoroz.com/tags/pip/</link>
+      <pubDate>Fri, 08 Oct 2010 09:34:00 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/tags/pip/</guid>
       <description></description>
     </item>
     
