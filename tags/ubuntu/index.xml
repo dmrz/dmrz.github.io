@@ -43,12 +43,12 @@
 &lt;p&gt;Who are those lads?&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenv&#34; target=&#34;_blank&#34;&gt;virtualenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenvwrapper&#34; target=&#34;_blank&#34;&gt;virtualenvwrapper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/pip&#34; target=&#34;_blank&#34;&gt;pip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenv&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;virtualenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/virtualenvwrapper&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;virtualenvwrapper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pypi.python.org/pypi/pip&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;pip&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;If you are not an Ubuntu user, you should better read this &lt;a href=&#34;http://mathematism.com/2009/jul/30/presentation-pip-and-virtualenv/&#34; target=&#34;_blank&#34;&gt;Presentation: pip and virtualenv&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;If you are not an Ubuntu user, you should better read this &lt;a href=&#34;http://mathematism.com/2009/jul/30/presentation-pip-and-virtualenv/&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;Presentation: pip and virtualenv&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

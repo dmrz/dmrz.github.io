@@ -30,7 +30,7 @@
       <pubDate>Tue, 06 Sep 2011 15:05:00 +0200</pubDate>
       
       <guid>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</guid>
-      <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
     </item>
     
   </channel>

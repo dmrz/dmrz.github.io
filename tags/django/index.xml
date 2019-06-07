@@ -30,7 +30,7 @@
       <pubDate>Tue, 06 Sep 2011 15:05:00 +0200</pubDate>
       
       <guid>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</guid>
-      <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ import settings from django.core.management import setup_environ setup_environ(s
       <pubDate>Fri, 30 Apr 2010 12:07:00 +0200</pubDate>
       
       <guid>https://dimamoroz.com/2010/04/30/hello-world/</guid>
-      <description>&lt;p&gt;This is actually not the first time I am launching a blog. I have archived all my old (mostly russian) articles at &lt;a href=&#34;http://dimaka.wordpress.com&#34; target=&#34;_blank&#34;&gt;wordpress.com&lt;/a&gt;, first post is dated from 2007, big amount of things changed since those times, I have changed, my interests had been changed. Also, this is more home page of mine, than just a blog. It will involve a lot of things I need, I use and I want to share with others.&lt;/p&gt;
+      <description>&lt;p&gt;This is actually not the first time I am launching a blog. I have archived all my old (mostly russian) articles at &lt;a href=&#34;http://dimaka.wordpress.com&#34; rel=&#34;noreferrer&#34; target=&#34;_blank&#34;&gt;wordpress.com&lt;/a&gt;, first post is dated from 2007, big amount of things changed since those times, I have changed, my interests had been changed. Also, this is more home page of mine, than just a blog. It will involve a lot of things I need, I use and I want to share with others.&lt;/p&gt;
 
 &lt;p&gt;I attend and I do like to read things on web in English, I like to deal with people using this language, that is why entire site and blog entries will be written in it. I am from Ukraine, that is not my native language, I still study it, so either my speech and texts are not fluent. Just feel free to ask anything in a case of misunderstanding.&lt;/p&gt;</description>
     </item>
