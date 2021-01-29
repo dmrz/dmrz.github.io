@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -10,7 +10,11 @@
   <url>
     <loc>https://dimamoroz.com/blog/</loc>
     <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/django/</loc>
+    <lastmod>2011-09-09T16:30:00+02:00</lastmod>
   </url>
   
   <url>
@@ -19,39 +23,28 @@
   </url>
   
   <url>
-    <loc>https://dimamoroz.com/tags/</loc>
-    <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dimamoroz.com/tags/django/</loc>
-    <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://dimamoroz.com/tags/mac/</loc>
     <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/tags/nginx/</loc>
     <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/tags/osx/</loc>
     <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/tags/python/</loc>
     <lastmod>2011-09-09T16:30:00+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/</loc>
+    <lastmod>2011-09-09T16:30:00+02:00</lastmod>
   </url>
   
   <url>
@@ -65,26 +58,33 @@
   </url>
   
   <url>
-    <loc>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</loc>
-    <lastmod>2011-03-13T15:08:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dimamoroz.com/tags/rails/</loc>
     <lastmod>2011-03-13T15:08:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/tags/redmine/</loc>
     <lastmod>2011-03-13T15:08:00+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</loc>
+    <lastmod>2011-03-13T15:08:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/tags/ruby/</loc>
     <lastmod>2011-03-13T15:08:00+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/git/</loc>
+    <lastmod>2011-03-09T07:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/linux/</loc>
+    <lastmod>2011-03-09T07:30:00+02:00</lastmod>
   </url>
   
   <url>
@@ -93,21 +93,8 @@
   </url>
   
   <url>
-    <loc>https://dimamoroz.com/tags/git/</loc>
-    <lastmod>2011-03-09T07:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dimamoroz.com/tags/linux/</loc>
-    <lastmod>2011-03-09T07:30:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://dimamoroz.com/tags/tips/</loc>
     <lastmod>2011-03-09T07:30:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -118,13 +105,21 @@
   <url>
     <loc>https://dimamoroz.com/tags/rsa/</loc>
     <lastmod>2010-12-09T12:06:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/tags/ssh/</loc>
     <lastmod>2010-12-09T12:06:00+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/pitfalls/</loc>
+    <lastmod>2010-12-04T12:12:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/ubuntu/</loc>
+    <lastmod>2010-12-04T12:12:00+02:00</lastmod>
   </url>
   
   <url>
@@ -133,21 +128,13 @@
   </url>
   
   <url>
-    <loc>https://dimamoroz.com/tags/pitfalls/</loc>
-    <lastmod>2010-12-04T12:12:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dimamoroz.com/tags/ubuntu/</loc>
-    <lastmod>2010-12-04T12:12:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://dimamoroz.com/tags/virtualenv/</loc>
     <lastmod>2010-12-04T12:12:00+02:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dimamoroz.com/tags/pil/</loc>
+    <lastmod>2010-10-13T11:49:00+02:00</lastmod>
   </url>
   
   <url>
@@ -156,20 +143,13 @@
   </url>
   
   <url>
-    <loc>https://dimamoroz.com/tags/pil/</loc>
-    <lastmod>2010-10-13T11:49:00+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://dimamoroz.com/tags/pip/</loc>
+    <lastmod>2010-10-08T09:34:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://dimamoroz.com/2010/10/08/python-virtual-environment-ubuntu/</loc>
     <lastmod>2010-10-08T09:34:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dimamoroz.com/tags/pip/</loc>
-    <lastmod>2010-10-08T09:34:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

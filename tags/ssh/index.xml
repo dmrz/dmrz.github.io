@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssh on Dima Moroz</title>
     <link>https://dimamoroz.com/tags/ssh/</link>
     <description>Recent content in ssh on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Dec 2010 12:06:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://dimamoroz.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 09 Dec 2010 12:06:00 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a public rsa key when you already have a private one</title>
       <link>https://dimamoroz.com/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</link>

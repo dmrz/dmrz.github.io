@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang='en'><head>
+<html lang='en' dir='auto'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='I was facing the next error with a config variant created using Redmine documentation:
-530 5.7.0 Must issue a STARTTLS command first'>
+530 5.7.0 Must issue a STARTTLS command first
+'>
 <meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='Redmine: sending email using google apps • Dima Moroz'>
 <meta property='og:description' content='I was facing the next error with a config variant created using Redmine documentation:
-530 5.7.0 Must issue a STARTTLS command first'>
+530 5.7.0 Must issue a STARTTLS command first
+'>
 <meta property='og:url' content='https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/'>
 <meta property='og:site_name' content='Dima Moroz'>
 <meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='rails'><meta property='article:tag' content='redmine'><meta property='article:tag' content='ruby'><meta property='article:published_time' content='2011-03-13T15:08:00&#43;02:00'/><meta property='article:modified_time' content='2011-03-13T15:08:00&#43;02:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.80.0" />
 
   <title>Redmine: sending email using google apps • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/'>
   
   
   <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.6a060eb7.css'><style>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><style>
 :root{--color-accent:#ffcd00;}
 </style>
 
@@ -72,13 +74,14 @@ if (!doNotTrack) {
 
     </div>
     <div class='entry-meta'>
-  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
   <line x1="16" y1="2" x2="16" y2="6"/>
   <line x1="8" y1="2" x2="8" y2="6"/>
   <line x1="3" y1="10" x2="21" y2="10"/>
-  
+
 </svg>
 <span class='screen-reader-text'>Posted on </span>
   <time class='entry-date' datetime='2011-03-13T15:08:00&#43;02:00'>2011, Mar 13</time>
@@ -86,11 +89,12 @@ if (!doNotTrack) {
 
   
   
-<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
   <circle cx="12" cy="12" r="10"/>
   <polyline points="12 6 12 12 15 15"/>
-  
+
 </svg>
 One min read
 </span>
@@ -107,8 +111,8 @@ One min read
 
   <div class='container entry-content'>
   <p>I was facing the next error with a config variant created using Redmine documentation:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">530 5.7.0 Must issue a STARTTLS command first</code></pre></div>
-<p>After googling I&rsquo;ve implemented a working configuration, here it is:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">530 5.7.0 Must issue a STARTTLS command first
+</code></pre></div><p>After googling I&rsquo;ve implemented a working configuration, here it is:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">production:
     delivery_method: :smtp
     smtp_settings:
@@ -119,16 +123,18 @@ One min read
     domain: <span style="color:#a31515">&#34;mydomain.com&#34;</span>
     authentication: :login
     user_name: <span style="color:#a31515">&#34;noreply@mydomain.com&#34;</span>
-    password: <span style="color:#a31515">&#34;mypassword&#34;</span></code></pre></div>
+    password: <span style="color:#a31515">&#34;mypassword&#34;</span>
+</code></pre></div>
 </div>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
+  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
   <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
   <line x1="7" y1="7" x2="7" y2="7"/>
-  
+
 </svg>
 <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/rails/'>rails</a>, <a class='tag' href='/tags/redmine/'>redmine</a>, <a class='tag' href='/tags/ruby/'>ruby</a></div>
 
@@ -141,21 +147,23 @@ One min read
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
       <a href='/2011/03/09/some-useful-git-tips/'>
-        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
+        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
   <line x1="20" y1="12" x2="4" y2="12"/>
   <polyline points="10 18 4 12 10 6"/>
-  
+
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>Some useful git tips</a>
     </div><div class='next-entry sep-before'>
       <a href='/2011/03/14/setting-django-settings-environment-within-python-script/'>
-        <span class='screen-reader-text'>Next post: </span>Setting up django settings environment within a python script<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
+        <span class='screen-reader-text'>Next post: </span>Setting up django settings environment within a python script<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
   <line x1="4" y1="12" x2="20" y2="12"/>
   <polyline points="14 6 20 12 14 18"/>
-  
+
 </svg>
 </span>
       </a>
@@ -194,45 +202,25 @@ One min read
       <footer id='footer' class='footer'>
         <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
     <ul><li>
-        <a href='https://github.com/dmrz' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-  
+        <a href='https://github.com/dmrz' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+
 </svg>
 </a>
       </li><li>
-        <a href='https://twitter.com/dimrz' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
-  
-</svg>
-</a>
-      </li><li>
-        <a href='https://linkedin.com/in/dimamoroz' target='_blank' rel='noopener'>
-          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-  <rect x="2" y="9" width="4" height="12"/>
-  <circle cx="4" cy="4" r="2"/>
-  
+        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
 </svg>
 </a>
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2010-2019 Dima Moroz </p>
+  <p> &copy; 2010-2021 Dima Moroz </p>
 </div>
 
         </div>
@@ -241,7 +229,7 @@ One min read
     </div>
   </div><script>window.__assets_js_src="/assets/js/"</script>
 
-<script src='/assets/js/main.67d669ac.js'></script>
+<script src='/assets/js/main.c3bcf2df.js'></script>
 
 </body>
 
