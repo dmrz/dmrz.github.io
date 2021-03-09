@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intel on Dima Moroz</title>
+    <link>https://dimamoroz.com/tags/intel/</link>
+    <description>Recent content in intel on Dima Moroz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 06 Mar 2021 17:15:53 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/intel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intel NUC as a backend for local development</title>
+      <link>https://dimamoroz.com/2021/03/06/intel-nuc-for-local-development/</link>
+      <pubDate>Sat, 06 Mar 2021 17:15:53 +0200</pubDate>
+      
+      <guid>https://dimamoroz.com/2021/03/06/intel-nuc-for-local-development/</guid>
+      <description>A comprehensive story on how I started using Intel NUC as a backend for local (remote possible as well) development, while my code editor (on any machine) is used as a thin client.
+Table of contents  Rationale Hardware Software  Initial Disk Network Setup  DHCP Wi-Fi   CPU Frequency Scaling   Usage (wakeonlan, vscode remote ssh) Conclusion  Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.</description>
+    </item>
+    
+  </channel>
+</rss>

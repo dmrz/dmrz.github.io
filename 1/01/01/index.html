@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.
+Table of contents  Rationale Hardware Software  Initial Setup Disk Network  DHCP Wi-Fi Wake-on-LAN Avahi   CPU Frequency Scaling   Usage  Overview Daily Routine   Conclusion  Pros Cons    Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content=' • Dima Moroz'>
+<meta property='og:description' content='A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.
+Table of contents  Rationale Hardware Software  Initial Setup Disk Network  DHCP Wi-Fi Wake-on-LAN Avahi   CPU Frequency Scaling   Usage  Overview Daily Routine   Conclusion  Pros Cons    Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.'>
+<meta property='og:url' content='https://dimamoroz.com/1/01/01/'>
+<meta property='og:site_name' content='Dima Moroz'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.81.0" />
+
+  <title> • Dima Moroz</title>
+  <link rel='canonical' href='https://dimamoroz.com/1/01/01/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-11219276-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-blog'>
+
+  <div class='site'><a class='screen-reader-text' href='#content'>Skip to Content</a><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/blog/'>Blog</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Dima Moroz</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'></h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='0001-01-01T00:00:00Z'>0001, Jan 01</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+
+</svg>
+22 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p>A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.</p>
+<h3 id="table-of-contents">Table of contents</h3>
+<ul>
+<li><a href="#rationale">Rationale</a></li>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#software">Software</a>
+<ul>
+<li><a href="#initial-setup">Initial Setup</a></li>
+<li><a href="#disk">Disk</a></li>
+<li><a href="#network">Network</a>
+<ul>
+<li><a href="#dhcp">DHCP</a></li>
+<li><a href="#wi-fi">Wi-Fi</a></li>
+<li><a href="#wake-on-lan">Wake-on-LAN</a></li>
+<li><a href="#avahi">Avahi</a></li>
+</ul>
+</li>
+<li><a href="#cpu-frequency-scaling">CPU Frequency Scaling</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#daily-routine">Daily Routine</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a>
+<ul>
+<li><a href="#pros">Pros</a></li>
+<li><a href="#cons">Cons</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="rationale">Rationale</h2>
+<p>There were 2 problems, using a dedicated machine for development, I thought I might solve.</p>
+<ol>
+<li>I worked on a project that had a large amount of heavy I/O tests I was running very often that had an intensive impact on SSD drives (with noticeable degrading over time). I use iMac and MacBook Pro and in my opinion, SSD is a weak point in both (hard to extract/replace in former and impossible to replace in latter), so I wanted to have a dedicated machine (where it will be easy to replace SSD) that will save me from buying a new Mac computer once it&rsquo;s SSD is dead or slow that it&rsquo;s impossible to work comfortably.</li>
+<li>We use Docker (like everyone else I think) for development and deployment, which makes I/O bound things slow on macOS (for reasons). There are some workarounds for that, I tried a lot of them, but it didn&rsquo;t work well eventually. I even had to run the application itself locally on macOS (with all the infrastructure services still in Docker containers) to avoid adding project directory (which is huge) to the container&rsquo;s context, since syncing that all the time makes fans spinning that much that computer is about to take off.</li>
+</ol>
+<p>I was postponing the solution for more than a year, until recently, when iMac started to crash repeatedly and ultimately didn&rsquo;t turn on. My first thought was: &ldquo;This is it, too late&hellip;&rdquo; 🤡 The problem was that as far as I know (I can be wrong) we don&rsquo;t have authorized Apple service providers in Ukraine, so I was completely paranoid about taking my computer anywhere with all the work data on decrypted SSD (which I had due to already degraded performance). I have even started to watch iMac disassembling tutorials, which looked hard, but feasible. With all that frustration I decided to dabble with the only accessible (without disassembling) component, which is RAM, luckily for me it turned out to be a broken RAM module exactly! Nevertheless, I decided it was a clear sign I should implement my long-expected goal.</p>
+<p>For those asking &ldquo;Why still use those 🤬 Macs?&quot;: I had thoughts to build a custom PC (I used to do it before, I like the process and the hardware options currently available) and use it with Linux (Windows might be an option too, Microsoft does a lot of effort towards programmers, but as far as I know WSL and Docker for Windows have similar to macOS I/O performance issues), but every time I try to use it on desktop (tried it again a couple of years ago) - I get a frustration since it has all the similar issues I was facing many years ago, which require some time to fix and I am way too lazy for that already (I used it for like 10 years on the desktop, different distributions, and it was fun to solve all those missing drivers and other configuration-related issues before, but it&rsquo;s not anymore). Also, I am very used to Macs (computers and ecosystem) already and spoiled by Retina displays, especially that 5K on iMac, as far as I know, there are no many similar ones available for PC for a reasonable amount of money (there is one from LG that is exactly one like in an iMac but I saw a lot of bad reviews on that and I frankly don&rsquo;t like how it looks).</p>
+<h2 id="hardware">Hardware</h2>
+<p>Despite technical specifications, I wanted this machine to be compact (have as a small footprint as possible), have a decent appearance (I can&rsquo;t do proper network cable management at the place I am currently living, so I knew it will be at the same room where my working table is and I did not want to hide it) and be energy efficient.</p>
+<p>The main competitors were: Mac Mini, custom-built SFF PC (based on Mini-ITX) and Intel NUC (I know there&rsquo;re similar solutions by Gigabyte, Asus, MSI, but I didn&rsquo;t like how they looked). I know many people use remote servers (some companies provide programmers with VMs that run apps), but I wasn&rsquo;t considering it due to security and legal issues, also I am sure it wouldn&rsquo;t give a smooth enough experience even having a very fast internet connection.</p>
+<p>Mac Mini was my first thought, but after some research, I figured it had no replaceable SSD (2020 model) and there were problems installing Ubuntu on it (I knew I wasn&rsquo;t going to run macOS there) and I was already tired of workarounds. It is also pricey if you want to go with some good configuration. Withdrawn.</p>
+<p>Custom-built SFF PC was something I was very thrilled about, there are so many hardware options available, you can build anything you like, with great performance. The thing I didn&rsquo;t like was the availability of nice and small Mini-ITX cases (small form factor), the only nice and available in Ukraine at that time was <a href="https://www.nzxt.com/products/h1-matte-white">NZXT H1</a> (it&rsquo;s tall, but still has a small footprint), however, it is not compatible with LGA 1200 motherboard (I was looking at Intel Core i9 10850K CPU back then), then I also figured out it had not very efficient cooling. I liked <a href="https://www.louqe.com/ghost-s1/">Ghost N1</a> case, but it would be very expensive to get it here.</p>
+<p>I had a struggle whether I should proceed with Intel NUC or build a custom PC (I was already thinking that maybe <a href="https://www.nzxt.com/products/h210-matte-white">NZXT H210</a> wasn&rsquo;t that big), but after some researches, I decided to give Intel NUC a shot. The reason was mostly the size, decent performance (I understand that Intel NUC has a very throttled mobile alike CPU variant, but it gave me enough, I will tell more about it in <a href="#conclusion">conclusion</a> section) and energy efficiency (see the table below).</p>
+<p><img src="/img/blog/11/single_thread_rating.png" alt="CPU Single Thread Rating"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">i7-10710U</th>
+<th style="text-align:center">i5-7267U</th>
+<th style="text-align:center">i5-9600K</th>
+<th style="text-align:center">i9-10850K</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max TDP</td>
+<td style="text-align:center">15W</td>
+<td style="text-align:center">25W</td>
+<td style="text-align:center">95W</td>
+<td style="text-align:center">125W</td>
+</tr>
+<tr>
+<td>Power consumption per day (kWh)</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">0.4</td>
+<td style="text-align:center">0.5</td>
+</tr>
+<tr>
+<td>Running cost per day</td>
+<td style="text-align:center">$0.004</td>
+<td style="text-align:center">$0.007</td>
+<td style="text-align:center">$0.023</td>
+<td style="text-align:center">$0.030</td>
+</tr>
+<tr>
+<td>Power consumption per year (kWh)</td>
+<td style="text-align:center">21.9</td>
+<td style="text-align:center">40.9</td>
+<td style="text-align:center">138.7</td>
+<td style="text-align:center">182.5</td>
+</tr>
+<tr>
+<td>Running cost per year</td>
+<td style="text-align:center">$1.31</td>
+<td style="text-align:center">$2.45</td>
+<td style="text-align:center">$8.32</td>
+<td style="text-align:center">$10.95</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CPU Single Thread Rating and Estimated Energy Usage Cost.</strong> This data is taken from <a href="https://www.cpubenchmark.net/compare/Intel-i7-10710U-vs-Intel-i5-7267U-vs-Intel-i5-9600K-vs-Intel-i9-10850K/3567vs3051vs3337vs3824">cpubenchmark.net</a> comparing CPUs in my Intel NUC, MacBook Pro, iMac, and custom-built PC that didn&rsquo;t happen respectively.</p>
+<p>My final choice was <a href="https://ark.intel.com/content/www/us/en/ark/products/188808/intel-nuc-10-performance-kit-nuc10i7fnk.html">Intel NUC 10 NUC10i7FNK</a> (slim kit, going with a tall one would be probably a good idea of having an extra storage space for backups, but I decided I wanted a smaller one) which I equipped with <a href="https://www.hyperxgaming.com/en/memory/impact-ddr4">HyperX Impact DDR4-2666 SODIMM 32GB (2 x 16GB)</a> and <a href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-pro-nvme-m2-512gb-mz-v7p512bw/">Samsung 970 PRO NVMe M.2 SSD 512GB</a>.</p>
+<p><img src="/img/blog/11/package.jpg" alt="Package"></p>
+<p><img src="/img/blog/11/assembled.jpg" alt="Assembled"></p>
+<p>Assembling it all was fast and pure joy. Also, I was happily shocked by its size, I never paid attention to its dimensions when I was reading specs and for some reason, I was sure it&rsquo;s similar in size to Mac Mini, but turned out it&rsquo;s like 1.5x of Raspberry Pi (when in case).</p>
+<p>The total price of the package: $1016. Not that cheap as I expected/wanted, but I did not have any regret so far.</p>
+<h2 id="software">Software</h2>
+<p>From the very beginning, I knew I was going to install Ubuntu Server 20.04 (all the servers I use nowadays run Ubuntu so I thought it&rsquo;s good to have a similar environment) on Intel NUC.</p>
+<p>I don&rsquo;t have an external display and newer iMacs cannot be used as such, so to see what is going on during setup (also to play with BIOS) I just connected NUC&rsquo;s HDMI output to an old capturing device I had and streamed it using OBS (like there were other options 🤪).</p>
+<p><img src="/img/blog/11/obs.jpg" alt="OBS"></p>
+<p>The installation process ran without any issue, NUC was using a shared internet connection from iMac. All the peripherals were recognized successfully without any flaw (at least the one I used so far), Intel NUC has official Ubuntu support, so it&rsquo;s not a surprise (unlike some of my experiences using Linux on Desktop as I&rsquo;ve mentioned before).</p>
+<p>The following section will be about configuring Ubuntu Server. I will try to avoid going deep into details and skip obvious steps, so here will be listed mostly unusual things or those that are not done often (like installing a list of essentials packages) so it can be used as a memo. You can skip to <a href="#usage">Usage</a> or <a href="#conclusion">Conclusion</a> section if you are not interested in it</p>
+<h4 id="initial-setup">Initial Setup</h4>
+<p>The first thing I always do with a fresh Linux install is setting an appropriate locale. In Ubuntu you do so by first generating the necessary ones, you can do it by running:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo dpkg-reconfigure locales
+</code></pre></div><p>And then setting it in <code>/etc/default/locale</code> file like:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">LANG=<span style="color:#a31515">en_US.UTF-8</span>
+</code></pre></div><p>After that I do a system upgrade:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt update
+$ sudo apt upgrade
+</code></pre></div><p>The next step should be some security configuration, ssh keys adding, etc, which I omit here, you can find a lot of tutorials on how to do it (like <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">this one</a>).</p>
+<p>Then I install some essential packages:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install -y linux-tools-common linux-tools-<span style="color:#00f">$(</span>uname -r<span style="color:#00f">)</span>
+$ sudo apt install -y make build-essential libssl-dev zlib1g-dev <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>libncurses5-dev libncursesw5-dev xmlsec1 xz-utils <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>tk-dev libffi-dev liblzma-dev python-openssl
+</code></pre></div><p>I also install <code>lm-sensors</code> package, so I can monitor temperatures using <code>sensors</code> command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install lm-sensors
+$ sudo sensors-detect
+</code></pre></div><p>And some necessary tools for development.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install git git-extras fzf zsh tmux
+</code></pre></div><p>For zsh configuration, I use <a href="https://ohmyz.sh/">Oh My Zsh</a>.</p>
+<p>I use <a href="https://github.com/junegunn/fzf">fzf</a> for zsh history search (available via built-in ohmyzsh plugin).</p>
+<p>Then I install Docker and docker-compose:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install docker.io docker-compose
+$ sudo systemctl enable docker
+$ sudo systemctl start docker
+$ sudo gpasswd -a dmrz docker
+</code></pre></div><p><em>The last command adds a user with username <code>dmrz</code> (change to the one you need) to docker group to use it without <code>sudo</code></em></p>
+<p>For Python development I prefer to install <a href="https://github.com/pyenv/pyenv">pyenv</a> and <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a> yet.</p>
+<h4 id="disk">Disk</h4>
+<p>I used LVM option for partitioning during the initial install and eventually figured out that my partition did not use the entire disk space (it&rsquo;s volume was less than a half to be precise). Seems like LVM reserves some space for reasons. You can use <code>vgdisplay</code> command to figure out the volume that has been allocated:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vgdisplay
+  --- Volume group ---
+  VG Name               ubuntu-vg
+  ...
+  VG Size               475.43 GiB
+  Alloc PE / Size       51200 / 200.00 GiB
+  Free  PE / Size       70511 / 275.43 GiB
+  ...
+</code></pre></div><p>If you want to use the entire disk space, run the following (it&rsquo;s easy to assume this operation may be risky, so make sure you back up all the data before):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+$ sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+</code></pre></div><p>If you run into any issue, check out this <a href="https://askubuntu.com/a/1117523">answer</a> for more details.</p>
+<h4 id="network">Network</h4>
+<h6 id="dhcp">DHCP</h6>
+<p>Ubuntu Server does not have DHCP enabled by default (so I could easily connect it to any network), but it is easy to enable (using <a href="https://netplan.io/">netplan</a>). We first create a configuration file <code>/etc/netplan/99_config.yaml</code> with the following content:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      dhcp4: <span style="color:#00f">true</span>
+</code></pre></div><p><em>Make sure you use a proper interface name (<code>eno1</code> in my case), run <code>ip a</code> to find it out.</em></p>
+<p>Once a file is saved we can apply the configuration:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo netplan apply
+</code></pre></div><h6 id="wi-fi">Wi-Fi</h6>
+<p>I mostly use NUC from iMac that shares an internet connection over ethernet, but sometimes I also connect to it using my laptop, so it&rsquo;s good to have Wi-Fi working. There are many ways to do it, but the simplest one is using Network Manager, which has a great command-line interface. We first need to install it:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install network-manager
+</code></pre></div><p>We can now list all the network devices available and focus on the one with <code>wifi</code> type:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli d
+DEVICE             TYPE      STATE        CONNECTION
+wlp0s20f3          wifi      unavailable  --
+</code></pre></div><p>If its state is unavailable we first need to turn the radio module on:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli r wifi on
+</code></pre></div><p>And now we can see a list of available networks:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli d wifi list
+IN-USE  BSSID              SSID             MODE   CHAN  RATE        SIGNAL  BARS  SECURITY
+        00:00:00:00:00:00  MYWIFI           Infra  12    540 Mbit/s  80      ▂▄▆_  WPA2
+        00:00:00:00:00:00  MYWIFI_5G        Infra  72    540 Mbit/s  75      ▂▄▆_  WPA2
+</code></pre></div><p>Now we can connect to the network we want using its SSID:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli d wifi connect MYWIFI_5G password myverysecurepassword
+</code></pre></div><h6 id="wake-on-lan">Wake-on-LAN</h6>
+<p>Intel NUC ethernet interface supports WOL, I used <code>ethtool</code> to enable it:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install ethtool
+$ sudo ethtool -s eno1 wol g
+</code></pre></div><p>In order to run it automatically on boot - we will create a <code>systemd</code> service, by adding the following into <code>/etc/systemd/system/wol.service</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#00f">[Unit]</span>
+Description=<span style="color:#a31515">Configure Wake On LAN</span>
+
+<span style="color:#00f">[Service]</span>
+Type=<span style="color:#a31515">oneshot</span>
+ExecStart=<span style="color:#a31515">/sbin/ethtool -s eno1 wol g</span>
+
+<span style="color:#00f">[Install]</span>
+WantedBy=<span style="color:#a31515">basic.target</span>
+</code></pre></div><p>and running:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl enable wol.service
+$ sudo systemctl start wol.service
+</code></pre></div><p><em>Your network interface may differ from <code>eno1</code>, you can find how to determine its name in <a href="#dhcp">DHCP Setup</a>.</em></p>
+<p>I will talk about using wake on LAN in <a href="#daily-routine">Usage Daily Routine</a> section.</p>
+<h6 id="avahi">Avahi</h6>
+<p>If you want to have NUC machine available on the network by <code>hostname.local</code> name, we need to install avahi-daemon yet:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install -y avahi-daemon
+</code></pre></div><h4 id="cpu-frequency-scaling">CPU Frequency Scaling</h4>
+<p>This was probably the trickiest part of the entire setup (and the most time-consuming). A long time ago when I was actively using Linux on desktop, Intel processors had something called SpeedStep for CPU frequency scaling and the only thing you needed to do was install a package called <code>cpufreq</code> or <code>cpufreqd</code>, run it as a daemon and it worked liked a charm. Turns out Intel (maybe not only they) now has something called P-state (since Sandy Bridge), that does not even require any additional software, and scaling is managed by CPU itself (if I understood it correctly), which sounds cool, but did not work well for me. It has only 2 governors: performance and powersave, most of the time it was set to performance (even when NUC was idling), it was also enabling turbo boost when it was not necessary, so fan noise was always excessive. You can ensure you have this driver enabled by running the following command:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+  intel_pstate
+</code></pre></div><p>I tried different approaches, installed different utilities, managed governor-related settings manually, it all didn&rsquo;t help much. Until I installed <a href="https://github.com/AdnanHodzic/auto-cpufreq">auto-cpufreq</a>, this was working fine, but not perfect: scaling lags, not scaling down enough on idle, CPU consumption (it&rsquo;s written in Python), turbo boost required manual adjustments. I am not trying to carp, I think <code>auto-cpufreq</code> is great, but I suppose it would better work on laptops (that have discharging states, unlike NUC). I decided to continue my research and saw many people were unhappy with that Intel P-state as well and the solution was simply to turn it off. I did it and I am now happy with the CPU Frequency Scaling that is achieved by using <code>acpi-cpufreq</code> fallback driver. To turn off P-state, you need to disable its module in GRUB config (so it is not loaded anymore on boot), by making sure there&rsquo;s the following line in <code>/etc/default/grub</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">GRUB_CMDLINE_LINUX_DEFAULT=<span style="color:#a31515">&#34;intel_pstate=disable&#34;</span>
+</code></pre></div><p><em>If you changed that line before, make sure you only add <code>intel_pstate=disable</code> there.</em></p>
+<p>After reboot you can see that <code>acpi-cpufreq</code> driver is used now:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+  acpi-cpufreq
+</code></pre></div><p>By default, it should use <code>ondemand</code> scaling governor, which is usually a good choice for systems that you need to have both good performance and to be energy efficient when idling. Run the following to check the governor used:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+  ondemand
+</code></pre></div><p>If for some reason you have other governor set, you can google how to change it (they&rsquo;re so many ways and utils), but the simplest way in my opinion is by installing <code>cpufrequtils</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install cpufrequtils
+</code></pre></div><p>And setting a government in its configuration file <code>/etc/default/cpufrequtils</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">ENABLE=<span style="color:#a31515">&#34;true&#34;</span>
+GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
+</code></pre></div><p>To list available scaling governors use <code>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors</code> command.</p>
+<p>So that&rsquo;s it, after that my NUC was up and running and ready for work usage. The rest of the software installation and configuration process was very limited to my specific needs and is not worth sharing.</p>
+<h2 id="usage">Usage</h2>
+<h6 id="overview">Overview</h6>
+<p>When I was pondering all this idea about using an external machine as a backend for development, I had multiple usage scenarios:</p>
+<ol>
+<li>Run all the infrastructure services and other artifacts on NUC, while the main application would remain running locally (as before), I liked this scenario, since it would require almost no configuration and 1gbps connection should be sufficient for all to be running fine (not as smooth as locally probably, but fine enough).</li>
+<li>Run everything inside NUC and share the project directory using SFTP or NFS, so I could edit code on any machine using any editor. Or maybe the more hardcore variant, edit remotely in vim (I was a long-time vim user, so it wouldn&rsquo;t be a problem, though I am more used to vscode now). This one would also require taking care about making a running application available for client machines (some reverse proxy or manual port forwarding).</li>
+<li>Use <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Visual Studio Code Remote - SSH</a> plugin. I don&rsquo;t know why it wasn&rsquo;t the first scenario I thought about (maybe did not enough research). I knew there was a similar plugin for Docker, but didn&rsquo;t know there&rsquo;s this one, for developing on the remote machine. There is a similar feature in PyCharm, but I didn&rsquo;t have a chance to test it yet.</li>
+</ol>
+<p>Even though I was sure I&rsquo;d go with the first scenario, I decided to give the third one a shot and make an experiment (before I bought NUC). I have prepared a similar environment on Raspberry Pi and tried working with it using Visual Studio Code Remote plugin. I was very skeptical about it, but it worked and worked well (even with a very slow Raspberry Pi 3 I/O and 100mbps connection). I changed my mind and decided I will proceed with this scenario first and if something goes wrong (it did not) I can always fall back to the first one.</p>
+<p>So, since the end of October 2020, I am using Visual Studio Code Remote - SSH for developing on NUC from my mac computers. It works perfectly flawlessly. Usage experience is not different from what I used to locally. Things like searching files (or in files) are even working faster (thanks to NVMe SSD 😀). It both provides access to the remote project directory using a built-in terminal and forwards all the opened ports (which can be adjusted manually) to my client machine (so I can open my web apps like they are running locally). For all this time I saw Visual Studio Code hanging a bit only once (and I am sure it has nothing to do with NUC, but with vscode itself). Since my working project had a huge amount of files, I had to increase <code>fs.inotify.max_user_watches</code> limit by adding the following to <code>/etc/sysctl.conf</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">fs.inotify.max_user_watches=<span style="color:#a31515">524288</span>
+</code></pre></div><p><em>You can read more about this issue <a href="https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc">here</a>.</em></p>
+<p><img src="/img/blog/11/multiple.jpg" alt="Multiple"></p>
+<p>Once the project setup is ready, you can even run the same project on multiple computers and they will all use the same environment (both connecting to the same codebase and locally alike running application without having a single bit of those present in the system).</p>
+<p>Developing on the NUC using Wi-Fi is very comfortable too (maybe not that smooth sometimes, if you pay attention), I could manage to get a better signal (when tested its speed was 100-300mbps), but this all is enough for me. It still works much faster than when I do local development on my old MacBook Pro! (Read more about performance in <a href="#conclusion">conclusion</a> section). Speaking of connection speed, when I was thinking about building a custom PC for this purpose, I wanted it to have a Thunderbolt port because I was sure I will need those 40gbps to have that local development experience feeling (especially if I&rsquo;d went with the first usage scenario); when I started considering Intel NUC - I was happy it had this port as well. I never had a chance to try it so far, turned out you need a special Thunderbolt data transfer cable (and not the regular USB Type-C, I was silly enough to think the one from MacBook&rsquo;s charger would work) and their price is high, especially if you want to have something longer than 1m. 1gbps ethernet connection works fine for me and I don&rsquo;t know if I will ever need more, but at some point, I think I would like to finally try that Thunderbolt thing.</p>
+<h6 id="daily-routine">Daily Routine</h6>
+<p>This is how my usual development process looks like with NUC:</p>
+<ul>
+<li>I use <a href="https://github.com/jpoliv/wakeonlan">wakeonlan</a> command to turn it on. NUC is located on the bookshelf a couple of meters away from my working table, so it is really useful. You can also schedule a time when NUC is on/off in its BIOS.</li>
+<li>Then I run <code>Visual Studio Code</code> locally (which usually opens a remote project on NUC already, if I didn&rsquo;t switch it) and work the same way I did without NUC before.</li>
+<li>All my code is located on NUC, I use git on NUC as well (mostly from command-line, but sometimes from vscode UI), periodically I backup sensitive data to a USB hard drive. On my working computer, I only need vscode to edit and a web browser to view the result.</li>
+<li>When I need to run some long-running process in the terminal - I always run it using tmux, so I don&rsquo;t have to run it again if I close the editor accidentally or my working machine goes to sleep. I have a bash script that runs tmux service with all the necessary things running in their separate panes.</li>
+<li>I often need to use OpenVPN connection inside NUC, unfortunately, I was unable to configure it using Network Manager (maybe due to 2fa), so I have to invoke it separately (have a script for that as well). I think I will need to investigate if it&rsquo;s possible to share OpenVPN tunnel from the working computer if I have already connected there.</li>
+<li>When I am done - I either suspend or power off NUC by running the remote command using SSH.</li>
+</ul>
+<p>I am totally fine with this workflow, the only thing that I would probably like to improve is turning NUC on/off, so I don&rsquo;t have to run iTerm or Terminal to invoke wakeonline or remote power off commands. Maybe I can use <a href="https://www.alfredapp.com/">Alfred</a>&rsquo;s Powerpack for that or some other hooks (when I run vscode for instance), would be happy to hear any recommendation on that.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I am using Intel NUC as a backend for local development for like 5 months already and to summarize it all I can say that I am happy with the setup and I think that I achieved what I was willing to.</p>
+<p>I am no longer scared of failing SSD on any of my computers. I don&rsquo;t have any sensitive work-related data on Macs, so I can take it to repairmen if necessary, also it seems they will serve longer without degrading fast since they are not under frequent I/O stress anymore. SSD in NUC is just a consumable that can be easily replaced in case of a failure or if I am not happy with its degraded performance anymore. Of course, I would like it all to be as easy as just install a new SSD and it would work exactly like before right away (I am sure there&rsquo;re techniques of making snapshots of an entire disk as a backup, but it will likely degrade performance if it runs constantly), but I hope this post will help me to install everything fast next time if I need it. At some point, I even thought about having an extra NUC for redundancy, how crazy is that? 👽</p>
+<p>As a final note, I would like to list the pros and cons I have found so far.</p>
+<h6 id="pros">Pros</h6>
+<ul>
+<li><strong>Performance.</strong> This is what surprised me the most. I expected it to perform like something between my old MacBook Pro (with Intel Core i5 7267U) and iMac (with Intel Core i5 9600K). I would be totally fine with that performance since it was the last of the requirements for this setup. Intel NUC (with Core i7 10710U, throttled, mobile CPU) showed very great results, my main project test suite (which is mostly I/O bound, but CPU bound tasks present there as well) was running 2-3 times faster, usually 6 minutes versus 15 minutes on iMac; also JavaScript (gulp, webpack) compilation tasks and similar were running fast enough (1.5-2 times faster). Intel NUC&rsquo;s CPU has 6 cores, so there is a good potential for concurrency, it worked very well for tests in Python project using pytest running with 6 parallel workers (it also has Hyper Threading support, but when running on 12 threads - performance will degrade due to throttling, it will become hot fast). And I don&rsquo;t think that this is because Intel NUC&rsquo;s CPU is faster, it&rsquo;s not, it&rsquo;s just all those things are very slow in macOS unfortunately (especially Docker).</li>
+<li><strong>Maintainability.</strong> Can easily replace RAM and SSD in case of a failure</li>
+<li><strong>Size.</strong> It is really small (like x1.5 of Raspberry Pi as I said or Apple TV). I think I could take it in my bag if I need to work at some other place, but since it&rsquo;s totally fine working even with 100mbps connection - I can do it just remotely. You can put it anywhere, it has a very tiny space requirement.</li>
+<li><strong>Appearance.</strong> I don&rsquo;t like the glossy finish of its top plate, but the overall look is great and modern. There is no need to hide it.</li>
+<li><strong>Energy Efficiency.</strong> It consumes the same as 1-2 LED bulbs (on average workflow).</li>
+<li><strong>Robustness.</strong> I know 5 months is not enough to speak of it, but I never had a reason to not trust Intel (despite their current market situation).</li>
+<li><strong>BIOS.</strong> It looks fantastic, easy to use, has frequent updates. You can change a lot of things there, like the power button or disk usage indicator LED color (I know it might sound like something small and silly, but I never saw anything like that in other computers before).</li>
+<li><strong>Interfaces.</strong> It has many interfaces that might be even necessary when you use it mainly as a headless backend for development: card reader, thunderbolt, USB Type-C.</li>
+</ul>
+<h6 id="cons">Cons</h6>
+<ul>
+<li><strong>Maintainability (yeah, I know, both pro and con).</strong> Cannot replace CPU in case of a failure, since it is SoC (system on a chip) and you need to replace the entire board.</li>
+<li><strong>PSU size.</strong> Not that small external power supply (I think it&rsquo;s a price of the NUC&rsquo;s size itself), could be smaller I think.</li>
+<li><strong>Fan Noise.</strong> I can&rsquo;t say it is that noisy, but it is noticeable, you can hear it even when idling (I am spoiled by computers that are silent when you don&rsquo;t do anything heavy). Luckily it&rsquo;s a bit far from my working place and I can only hear it under the load. There are sophisticated fan control settings in BIOS, which I didn&rsquo;t play much with yet, but I think there&rsquo;s a chance to set up some sane temp to speed ratio, so it will be quieter (I will update this if I succeed to do so).</li>
+</ul>
+<p>Thank you for reading!</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='next-entry sep-before'>
+      <a href='/2010/04/30/hello-world/'>
+        <span class='screen-reader-text'>Next post: </span>Hello World<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/dmrz' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+
+</svg>
+</a>
+      </li><li>
+        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2010-2021 Dima Moroz </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script>
+
+</body>
+
+</html>
+
