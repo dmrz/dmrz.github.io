@@ -26,18 +26,17 @@ PIL is installed within python virtual environment. Figured out, I have no devel
 :root{--color-accent:#ffcd00;}
 </style>
 
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4VK5L1F4V"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-11219276-3', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-L4VK5L1F4V', { 'anonymize_ip': false });
 }
 </script>
+
   
 
 </head>
@@ -144,7 +143,7 @@ One min read
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd /usr/lib
 </span></span><span style="display:flex;"><span>$ sudo ln -s x86_64-linux-gnu/libjpeg.so
 </span></span><span style="display:flex;"><span>$ sudo ln -s x86_64-linux-gnu/libz.so
-</span></span></code></pre></div><p>I also found it more neat to symlink those libs within the virtualenv&rsquo;s (which you obviously use, <a href="http://dimamoroz.com/blog/2-python-virtual-environment-ubuntu/">read this</a> if you do not) so we do not need root access and system is more clean eventually:</p>
+</span></span></code></pre></div><p>I also found it more neat to symlink those libs within the virtualenv&rsquo;s (which you obviously use, <a href="http://dmrz.dev/blog/2-python-virtual-environment-ubuntu/">read this</a> if you do not) so we do not need root access and system is more clean eventually:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /my/env/lib
 </span></span><span style="display:flex;"><span>$ ln -s /usr/lib/x86_64-linux-gnu/libz.so /my/env/lib
 </span></span></code></pre></div>
