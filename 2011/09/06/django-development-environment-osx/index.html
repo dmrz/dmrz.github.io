@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Dima Moroz'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/b5995355510b31e51ab6655f0c23832c?s=256'><meta property='article:section' content='blog'><meta property='article:tag' content='django'><meta property='article:tag' content='python'><meta property='article:tag' content='mac'><meta property='article:tag' content='osx'><meta property='article:published_time' content='2011-09-06T15:05:00&#43;02:00'/><meta property='article:modified_time' content='2011-09-06T15:05:00&#43;02:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.119.0">
 
   <title>Django development environment on OSX • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2011/09/06/django-development-environment-osx/'>
@@ -25,14 +25,15 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-11219276-3', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
   
 
 </head>
@@ -70,34 +71,46 @@ if (!doNotTrack) {
 
     </div>
     <div class='entry-meta'>
-  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-  <line x1="16" y1="2" x2="16" y2="6"/>
-  <line x1="8" y1="2" x2="8" y2="6"/>
-  <line x1="3" y1="10" x2="21" y2="10"/>
-
+  <span class='posted-on'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+<line x1="16" y1="2" x2="16" y2="6" />
+<line x1="8" y1="2" x2="8" y2="6" />
+<line x1="3" y1="10" x2="21" y2="10" />
 </svg>
 <span class='screen-reader-text'>Posted on </span>
   <time class='entry-date' datetime='2011-09-06T15:05:00&#43;02:00'>2011, Sep 06</time>
 </span>
 
-  <span class='byline'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
-  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
-
+  <span class='byline'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1" />
+<path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z" />
 </svg>
 <span class='screen-reader-text'> by </span><a href='/authors/dmrz'>Dima Moroz</a></span>
   
-<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <circle cx="12" cy="12" r="10"/>
-  <polyline points="12 6 12 12 15 15"/>
-
+<span class='reading-time'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><circle cx="12" cy="12" r="10" />
+<polyline points="12 6 12 12 15 15" />
 </svg>
 6 mins read
 </span>
@@ -122,60 +135,64 @@ I was bootstrapping python virtual environment for Django development on differe
 <p>So the first thing we do is checking for requirements, we need to have Xcode 4 installed (it is free of charge for Lion, you can get it from the App Store) and X11 as Homebrew installation guide says (it is installed by default in Snow Leopard). Actually the main requirement of Xcode is that it provides gcc and many people complain about they have to install a huge package only to have gcc installed. There is a gcc implementation without installing Xcode <a href="https://github.com/kennethreitz/osx-gcc-installer">osx-gcc-installer</a> but I did not try it though (I was noticed about this one on twitter other day, so I suppose it is immature, but probably a really good way to go in the nearest future). If requirements are satisfied, we can go further with installation:</p>
 <p>###1. Installing Homebrew.
 Looks weird as I have mentioned above. You can explore a script on the given url if you need explanations.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ruby -e <span style="color:#a31515">&#34;</span><span style="color:#00f">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go<span style="color:#00f">)</span><span style="color:#a31515">&#34;</span>
-</code></pre></div><p>This is retrieving a script source from gist and like &ldquo;piping&rdquo; it to the ruby interpereter. It will prompt you for your password (since it requires a write access to /usr/local/). When it&rsquo;s done, you can run brew command to install packages.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ruby -e <span style="color:#a31515">&#34;</span><span style="color:#00f">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go<span style="color:#00f">)</span><span style="color:#a31515">&#34;</span>
+</span></span></code></pre></div><p>This is retrieving a script source from gist and like &ldquo;piping&rdquo; it to the ruby interpereter. It will prompt you for your password (since it requires a write access to /usr/local/). When it&rsquo;s done, you can run brew command to install packages.</p>
 <p>###2. Configuring system paths.
 Homebrew installs everything to /usr/local, so we need it to be in the beginning of our $PATH same as python software installed using brew (to override	system wide). So we add the next line to our ~/.bashrc (either ~/.bash_profile or ~/.zshrc):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export PATH=/usr/local/bin:/usr/local/share/python:$PATH
-</code></pre></div><p>###3. Installing and configuring django development environment.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export PATH=/usr/local/bin:/usr/local/share/python:$PATH
+</span></span></code></pre></div><p>###3. Installing and configuring django development environment.
 I can&rsquo;t imagine my daily workflow with python and django without using python virtual environment and I guess so are you.</p>
 <p>The first thing I do is updating Python to the latest 2.x version:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install python
-</code></pre></div><p>Restart terminal afterwards, to make sure fresh python is used by default.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install python
+</span></span></code></pre></div><p>Restart terminal afterwards, to make sure fresh python is used by default.</p>
 <p><del>Then I install pip using easy_install, but firstly we check that the correct easy_installed will be used:</del></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ which easy_install
-/usr/local/share/python/easy_install <span style="color:#008000"># This is correct</span>
-$ easy_install pip
-</code></pre></div><p><em>UPDATE:</em> As of a version 2.7.5, python package currently has pip pre-installed, so the above snippet is obscure.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ which easy_install
+</span></span><span style="display:flex;"><span>/usr/local/share/python/easy_install <span style="color:#008000"># This is correct</span>
+</span></span><span style="display:flex;"><span>$ easy_install pip
+</span></span></code></pre></div><p><em>UPDATE:</em> As of a version 2.7.5, python package currently has pip pre-installed, so the above snippet is obscure.</p>
 <p>When pip is installed, you can follow <a href="http://dimamoroz.com/blog/2-python-virtual-environment-ubuntu/">my simple tutorial</a> and install python virtual environment in the same manner, with only few difference.</p>
 <p>We use pip without sudo command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install virtualenv virtualenvwrapper
-</code></pre></div><p>We source from the other path file, so the lines we put to ~/.bashrc (either ~/.bash_profile or ~/.zshrc) are:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre></div><p>If you need lazy loading of virtualenvwrapper (makes shell start faster, though tab completion for wrapper is only available after the first command is ran):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
-</code></pre></div><p>And then we restart terminal, so virtualenv can be initialized and we can use virtualenv and virtualenvwrapper as usual.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install virtualenv virtualenvwrapper
+</span></span></code></pre></div><p>We source from the other path file, so the lines we put to ~/.bashrc (either ~/.bash_profile or ~/.zshrc) are:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export WORKON_HOME=$HOME/.virtualenvs
+</span></span><span style="display:flex;"><span>source /usr/local/bin/virtualenvwrapper.sh
+</span></span></code></pre></div><p>If you need lazy loading of virtualenvwrapper (makes shell start faster, though tab completion for wrapper is only available after the first command is ran):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export WORKON_HOME=$HOME/.virtualenvs
+</span></span><span style="display:flex;"><span>export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+</span></span><span style="display:flex;"><span>source /usr/local/bin/virtualenvwrapper_lazy.sh
+</span></span></code></pre></div><p>And then we restart terminal, so virtualenv can be initialized and we can use virtualenv and virtualenvwrapper as usual.</p>
 <p>When I was moving to OSX, I heard a lot about problems installing PIL using pip on macs. I was wondered when I didn&rsquo;t face any problem installing it using brew:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install libjpeg
-$ brew install lcms <span style="color:#008000"># If needed</span>
-$ brew install libtiff <span style="color:#008000"># If needed</span>
-$ pip install PIL
-</code></pre></div><p>###4. Installing PostgreSQL.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install libjpeg
+</span></span><span style="display:flex;"><span>$ brew install lcms <span style="color:#008000"># If needed</span>
+</span></span><span style="display:flex;"><span>$ brew install libtiff <span style="color:#008000"># If needed</span>
+</span></span><span style="display:flex;"><span>$ pip install PIL
+</span></span></code></pre></div><p>###4. Installing PostgreSQL.
 I use PostgreSQL, so the following is about how to install and setup PostgreSQL on OSX using brew for my needs. This is totally covered at the <a href="https://gist.github.com/902296">OSX Developer System installation</a>, if you are MySQL user, you can find necessary documentation there as well.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ PYTHON=/usr/local/bin/python  brew install postgresql
-$ initdb /usr/local/var/postgres
-$ cp /usr/local/Cellar/postgresql/9.0.4/org.postgresql.postgres.plist ~/Library/LaunchAgents/
-$ launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
-</code></pre></div><p>This will install posgres, initialize default data, run postgres and make it always running when system starts. You can now check installation by running:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ createdb mytestdb
-$ dropdb mytestdb
-</code></pre></div><p>And it has to be flown smoothly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ PYTHON=/usr/local/bin/python  brew install postgresql
+</span></span><span style="display:flex;"><span>$ initdb /usr/local/var/postgres
+</span></span><span style="display:flex;"><span>$ cp /usr/local/Cellar/postgresql/9.0.4/org.postgresql.postgres.plist ~/Library/LaunchAgents/
+</span></span><span style="display:flex;"><span>$ launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+</span></span></code></pre></div><p>This will install posgres, initialize default data, run postgres and make it always running when system starts. You can now check installation by running:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ createdb mytestdb
+</span></span><span style="display:flex;"><span>$ dropdb mytestdb
+</span></span></code></pre></div><p>And it has to be flown smoothly.</p>
 <p>Then you can install python postgresql adaptor within your virutalenvironment:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install psycopg2
-</code></pre></div><p>If your setup requires some additional tools or libraries, you can search them using brew search</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install psycopg2
+</span></span></code></pre></div><p>If your setup requires some additional tools or libraries, you can search them using brew search</p>
 </div>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
-  <line x1="7" y1="7" x2="7" y2="7"/>
-
+  <div class='container sep-before'><div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
 </svg>
 <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/django/'>django</a>, <a class='tag' href='/tags/python/'>python</a>, <a class='tag' href='/tags/mac/'>mac</a>, <a class='tag' href='/tags/osx/'>osx</a></div>
 
@@ -188,23 +205,31 @@ $ dropdb mytestdb
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
       <a href='/2011/03/14/setting-django-settings-environment-within-python-script/'>
-        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="20" y1="12" x2="4" y2="12"/>
-  <polyline points="10 18 4 12 10 6"/>
-
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>Setting up django settings environment within a python script</a>
     </div><div class='next-entry sep-before'>
       <a href='/2011/09/09/django-local-development-nginx-osx/'>
-        <span class='screen-reader-text'>Next post: </span>Django local development with nginx on OSX<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-
+        <span class='screen-reader-text'>Next post: </span>Django local development with nginx on OSX<span aria-hidden='true'>Next <svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="4" y1="12" x2="20" y2="12" />
+<polyline points="14 6 20 12 14 18" />
 </svg>
 </span>
       </a>
@@ -220,24 +245,21 @@ $ dropdb mytestdb
         <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
     <ul><li>
         <a href='https://github.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
 </svg>
 </a>
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2010-2021 Dima Moroz </p>
+  <p> &copy; 2010-2023 Dima Moroz </p>
 </div>
 
         </div>

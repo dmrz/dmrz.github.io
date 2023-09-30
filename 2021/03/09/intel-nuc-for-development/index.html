@@ -3,17 +3,17 @@
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.
-Table of contents  Rationale Hardware Software  Initial Setup Disk Network  DHCP Wi-Fi Wake-on-LAN Avahi   CPU Frequency Scaling   Usage  Overview Daily Routine   Conclusion  Pros Cons    Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.'>
+Table of contents Rationale Hardware Software Initial Setup Disk Network Static IP DHCP Wi-Fi Wake-on-LAN Avahi CPU Frequency Scaling Usage Overview Daily Routine Conclusion Pros Cons Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.'>
 <meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='Intel NUC as a backend for development • Dima Moroz'>
 <meta property='og:description' content='A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.
-Table of contents  Rationale Hardware Software  Initial Setup Disk Network  DHCP Wi-Fi Wake-on-LAN Avahi   CPU Frequency Scaling   Usage  Overview Daily Routine   Conclusion  Pros Cons    Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.'>
+Table of contents Rationale Hardware Software Initial Setup Disk Network Static IP DHCP Wi-Fi Wake-on-LAN Avahi CPU Frequency Scaling Usage Overview Daily Routine Conclusion Pros Cons Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.'>
 <meta property='og:url' content='https://dimamoroz.com/2021/03/09/intel-nuc-for-development/'>
 <meta property='og:site_name' content='Dima Moroz'>
-<meta property='og:type' content='article'><meta property='og:image' content='https://dimamoroz.com/img/blog/11/dustin.jpg'><meta property='article:section' content='blog'><meta property='article:tag' content='development'><meta property='article:tag' content='ubuntu'><meta property='article:tag' content='intel nuc'><meta property='article:tag' content='hardware'><meta property='article:tag' content='workflow'><meta property='article:tag' content='review'><meta property='article:published_time' content='2021-03-09T17:15:53&#43;02:00'/><meta property='article:modified_time' content='2021-03-09T17:15:53&#43;02:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://dimamoroz.com/img/blog/11/dustin.jpg'><meta property='article:section' content='blog'><meta property='article:tag' content='development'><meta property='article:tag' content='ubuntu'><meta property='article:tag' content='intel nuc'><meta property='article:tag' content='hardware'><meta property='article:tag' content='workflow'><meta property='article:tag' content='review'><meta property='article:published_time' content='2021-03-09T17:15:53&#43;02:00'/><meta property='article:modified_time' content='2023-09-30T15:11:00&#43;03:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.119.0">
 
   <title>Intel NUC as a backend for development • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2021/03/09/intel-nuc-for-development/'>
@@ -27,14 +27,15 @@ Table of contents  Rationale Hardware Software  Initial Setup Disk Network  DHCP
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-11219276-3', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
   
 
 </head>
@@ -72,36 +73,48 @@ if (!doNotTrack) {
 
     </div>
     <div class='entry-meta'>
-  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-  <line x1="16" y1="2" x2="16" y2="6"/>
-  <line x1="8" y1="2" x2="8" y2="6"/>
-  <line x1="3" y1="10" x2="21" y2="10"/>
-
+  <span class='posted-on'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+<line x1="16" y1="2" x2="16" y2="6" />
+<line x1="8" y1="2" x2="8" y2="6" />
+<line x1="3" y1="10" x2="21" y2="10" />
 </svg>
 <span class='screen-reader-text'>Posted on </span>
   <time class='entry-date' datetime='2021-03-09T17:15:53&#43;02:00'>2021, Mar 09</time>
 </span>
 
-  <span class='byline'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
-  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
-
+  <span class='byline'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1" />
+<path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z" />
 </svg>
 <span class='screen-reader-text'> by </span><a href='/authors/dmrz'>Dima Moroz</a></span>
   
-<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <circle cx="12" cy="12" r="10"/>
-  <polyline points="12 6 12 12 15 15"/>
-
+<span class='reading-time'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><circle cx="12" cy="12" r="10" />
+<polyline points="12 6 12 12 15 15" />
 </svg>
-22 mins read
+23 mins read
 </span>
 
 
@@ -127,6 +140,7 @@ if (!doNotTrack) {
 <li><a href="#disk">Disk</a></li>
 <li><a href="#network">Network</a>
 <ul>
+<li><a href="#static-ip">Static IP</a></li>
 <li><a href="#dhcp">DHCP</a></li>
 <li><a href="#wi-fi">Wi-Fi</a></li>
 <li><a href="#wake-on-lan">Wake-on-LAN</a></li>
@@ -156,7 +170,7 @@ if (!doNotTrack) {
 <li>We use Docker (like everyone else I think) for development and deployment, which makes I/O bound things slow on macOS (for reasons). There are some workarounds for that, I tried a lot of them, but it didn&rsquo;t work well eventually. I even had to run the application itself locally on macOS (with all the infrastructure services still in Docker containers) to avoid adding project directory (which is huge) to the container&rsquo;s context, since syncing that all the time makes fans spinning that much that computer is about to take off.</li>
 </ol>
 <p>I was postponing the solution for more than a year, until recently, when iMac started to crash repeatedly and ultimately didn&rsquo;t turn on. My first thought was: &ldquo;This is it, too late&hellip;&rdquo; 🤡 The problem was that as far as I know (I can be wrong) we don&rsquo;t have authorized Apple service providers in Ukraine, so I was completely paranoid about taking my computer anywhere with all the work data on decrypted SSD (which I had due to already degraded performance). I have even started to watch iMac disassembling tutorials, which looked hard, but feasible. With all that frustration I decided to dabble with the only accessible (without disassembling) component, which is RAM, luckily for me it turned out to be a broken RAM module exactly! Nevertheless, I decided it was a clear sign I should implement my long-expected goal.</p>
-<p>For those asking &ldquo;Why still use those 🤬 Macs?&quot;: I had thoughts to build a custom PC (I used to do it before, I like the process and the hardware options currently available) and use it with Linux (Windows might be an option too, Microsoft does a lot of effort towards programmers, but as far as I know WSL and Docker for Windows have similar to macOS I/O performance issues), but every time I try to use it on desktop (tried it again a couple of years ago) - I get a frustration since it has all the similar issues I was facing many years ago, which require some time to fix and I am way too lazy for that already (I used it for like 10 years on the desktop, different distributions, and it was fun to solve all those missing drivers and other configuration-related issues before, but it&rsquo;s not anymore). Also, I am very used to Macs (computers and ecosystem) already and spoiled by Retina displays, especially that 5K on iMac, as far as I know, there are no many similar ones available for PC for a reasonable amount of money (there is one from LG that is exactly one like in an iMac but I saw a lot of bad reviews on that and I frankly don&rsquo;t like how it looks).</p>
+<p>For those asking &ldquo;Why still use those 🤬 Macs?&rdquo;: I had thoughts to build a custom PC (I used to do it before, I like the process and the hardware options currently available) and use it with Linux (Windows might be an option too, Microsoft does a lot of effort towards programmers, but as far as I know WSL and Docker for Windows have similar to macOS I/O performance issues), but every time I try to use it on desktop (tried it again a couple of years ago) - I get a frustration since it has all the similar issues I was facing many years ago, which require some time to fix and I am way too lazy for that already (I used it for like 10 years on the desktop, different distributions, and it was fun to solve all those missing drivers and other configuration-related issues before, but it&rsquo;s not anymore). Also, I am very used to Macs (computers and ecosystem) already and spoiled by Retina displays, especially that 5K on iMac, as far as I know, there are no many similar ones available for PC for a reasonable amount of money (there is one from LG that is exactly one like in an iMac but I saw a lot of bad reviews on that and I frankly don&rsquo;t like how it looks).</p>
 <h2 id="hardware">Hardware</h2>
 <p>Despite technical specifications, I wanted this machine to be compact (have as a small footprint as possible), have a decent appearance (I can&rsquo;t do proper network cable management at the place I am currently living, so I knew it will be at the same room where my working table is and I did not want to hide it) and be energy efficient.</p>
 <p>The main competitors were: Mac Mini, custom-built SFF PC (based on Mini-ITX) and Intel NUC (I know there&rsquo;re similar solutions by Gigabyte, Asus, MSI, but I didn&rsquo;t like how they looked). I know many people use remote servers (some companies provide programmers with VMs that run apps), but I wasn&rsquo;t considering it due to security and legal issues, also I am sure it wouldn&rsquo;t give a smooth enough experience even having a very fast internet connection.</p>
@@ -226,116 +240,142 @@ if (!doNotTrack) {
 <p>The following section will be about configuring Ubuntu Server. I will try to avoid going deep into details and skip obvious steps, so here will be listed mostly unusual things or those that are not done often (like installing a list of essentials packages) so it can be used as a memo. You can skip to <a href="#usage">Usage</a> or <a href="#conclusion">Conclusion</a> section if you are not interested in it</p>
 <h4 id="initial-setup">Initial Setup</h4>
 <p>The first thing I always do with a fresh Linux install is setting an appropriate locale. In Ubuntu you do so by first generating the necessary ones, you can do it by running:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo dpkg-reconfigure locales
-</code></pre></div><p>And then setting it in <code>/etc/default/locale</code> file like:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">LANG=<span style="color:#a31515">en_US.UTF-8</span>
-</code></pre></div><p>After that I do a system upgrade:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt update
-$ sudo apt upgrade
-</code></pre></div><p>The next step should be some security configuration, ssh keys adding, etc, which I omit here, you can find a lot of tutorials on how to do it (like <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">this one</a>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo dpkg-reconfigure locales
+</span></span></code></pre></div><p>And then setting it in <code>/etc/default/locale</code> file like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>LANG=<span style="color:#a31515">en_US.UTF-8</span>
+</span></span></code></pre></div><p>After that I do a system upgrade:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt update
+</span></span><span style="display:flex;"><span>$ sudo apt upgrade
+</span></span></code></pre></div><p>The next step should be some security configuration, ssh keys adding, etc, which I omit here, you can find a lot of tutorials on how to do it (like <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">this one</a>).</p>
 <p>Then I install some essential packages:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install -y linux-tools-common linux-tools-<span style="color:#00f">$(</span>uname -r<span style="color:#00f">)</span>
-$ sudo apt install -y make build-essential libssl-dev zlib1g-dev <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>libncurses5-dev libncursesw5-dev xmlsec1 xz-utils <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>tk-dev libffi-dev liblzma-dev python-openssl
-</code></pre></div><p>I also install <code>lm-sensors</code> package, so I can monitor temperatures using <code>sensors</code> command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install lm-sensors
-$ sudo sensors-detect
-</code></pre></div><p>And some necessary tools for development.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install git git-extras fzf zsh tmux
-</code></pre></div><p>For zsh configuration, I use <a href="https://ohmyz.sh/">Oh My Zsh</a>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install -y linux-tools-common linux-tools-<span style="color:#00f">$(</span>uname -r<span style="color:#00f">)</span>
+</span></span><span style="display:flex;"><span>$ sudo apt install -y make build-essential libssl-dev zlib1g-dev <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>libncurses5-dev libncursesw5-dev xmlsec1 xz-utils <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>tk-dev libffi-dev liblzma-dev python-openssl
+</span></span></code></pre></div><p>I also install <code>lm-sensors</code> package, so I can monitor temperatures using <code>sensors</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install lm-sensors
+</span></span><span style="display:flex;"><span>$ sudo sensors-detect
+</span></span></code></pre></div><p>And some necessary tools for development.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install git git-extras fzf zsh tmux
+</span></span></code></pre></div><p>For zsh configuration, I use <a href="https://ohmyz.sh/">Oh My Zsh</a>.</p>
 <p>I use <a href="https://github.com/junegunn/fzf">fzf</a> for zsh history search (available via built-in ohmyzsh plugin).</p>
 <p>Then I install Docker and docker-compose:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install docker.io docker-compose
-$ sudo systemctl enable docker
-$ sudo systemctl start docker
-$ sudo gpasswd -a dmrz docker
-</code></pre></div><p><em>The last command adds a user with username <code>dmrz</code> (change to the one you need) to docker group to use it without <code>sudo</code></em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install docker.io docker-compose
+</span></span><span style="display:flex;"><span>$ sudo systemctl enable docker
+</span></span><span style="display:flex;"><span>$ sudo systemctl start docker
+</span></span><span style="display:flex;"><span>$ sudo gpasswd -a dmrz docker
+</span></span></code></pre></div><p><em>The last command adds a user with username <code>dmrz</code> (change to the one you need) to docker group to use it without <code>sudo</code></em></p>
 <p>For Python development I prefer to install <a href="https://github.com/pyenv/pyenv">pyenv</a> and <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a> yet.</p>
 <h4 id="disk">Disk</h4>
 <p>I used LVM option for partitioning during the initial install and eventually figured out that my partition did not use the entire disk space (it&rsquo;s volume was less than a half to be precise). Seems like LVM reserves some space for reasons. You can use <code>vgdisplay</code> command to figure out the volume that has been allocated:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vgdisplay
-  --- Volume group ---
-  VG Name               ubuntu-vg
-  ...
-  VG Size               475.43 GiB
-  Alloc PE / Size       51200 / 200.00 GiB
-  Free  PE / Size       70511 / 275.43 GiB
-  ...
-</code></pre></div><p>If you want to use the entire disk space, run the following (it&rsquo;s easy to assume this operation may be risky, so make sure you back up all the data before):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
-$ sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
-</code></pre></div><p>If you run into any issue, check out this <a href="https://askubuntu.com/a/1117523">answer</a> for more details.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo vgdisplay
+</span></span><span style="display:flex;"><span>  --- Volume group ---
+</span></span><span style="display:flex;"><span>  VG Name               ubuntu-vg
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  VG Size               475.43 GiB
+</span></span><span style="display:flex;"><span>  Alloc PE / Size       51200 / 200.00 GiB
+</span></span><span style="display:flex;"><span>  Free  PE / Size       70511 / 275.43 GiB
+</span></span><span style="display:flex;"><span>  ...
+</span></span></code></pre></div><p>If you want to use the entire disk space, run the following (it&rsquo;s easy to assume this operation may be risky, so make sure you back up all the data before):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+</span></span><span style="display:flex;"><span>$ sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+</span></span></code></pre></div><p>If you run into any issue, check out this <a href="https://askubuntu.com/a/1117523">answer</a> for more details.</p>
 <h4 id="network">Network</h4>
-<h6 id="dhcp">DHCP</h6>
-<p>Ubuntu Server does not have DHCP enabled by default (so I could easily connect it to any network), but it is easy to enable (using <a href="https://netplan.io/">netplan</a>). We first create a configuration file <code>/etc/netplan/99_config.yaml</code> with the following content:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    eno1:
-      dhcp4: <span style="color:#00f">true</span>
-</code></pre></div><p><em>Make sure you use a proper interface name (<code>eno1</code> in my case), run <code>ip a</code> to find it out.</em></p>
+<h6 id="static-ip">Static IP</h6>
+<p>I connect my NUC directly to iMac using ethernet cable, hence I want it to have a permanent IP. If you connect NUC to your network via some router or other network device with DHCP - please check the next section about setting it up with <a href="#dchp">DHCP</a></p>
+<p>On MacOS I setup a manually configured IP 192.168.2.1 for ethernet interface with netmask 255.255.255.0. I also set it up to share Internet Connection over Ethernet (for a case when NUC is not connection via Wi-Fi to main router), you can read about it <a href="https://support.apple.com/guide/mac-help/mchlp1540/mac">here</a>.</p>
+<p>On Ubuntu&rsquo;s side, we have need to add <code>/etc/netplan/99_config.yaml</code> configuration file with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>  version: 2
+</span></span><span style="display:flex;"><span>  renderer: networkd
+</span></span><span style="display:flex;"><span>  ethernets:
+</span></span><span style="display:flex;"><span>    eno1:
+</span></span><span style="display:flex;"><span>      dhcp4: <span style="color:#00f">no</span>
+</span></span><span style="display:flex;"><span>      dhcp6: <span style="color:#00f">no</span>
+</span></span><span style="display:flex;"><span>      addresses:
+</span></span><span style="display:flex;"><span>        - 192.168.2.2/24
+</span></span><span style="display:flex;"><span>      routes:
+</span></span><span style="display:flex;"><span>        - to: default
+</span></span><span style="display:flex;"><span>          via: 192.168.2.1
+</span></span><span style="display:flex;"><span>      nameservers:
+</span></span><span style="display:flex;"><span>        addresses:
+</span></span><span style="display:flex;"><span>          - 8.8.8.8
+</span></span></code></pre></div><p>Feel free to use other DNS server addresses (I use 8.8.8.8 provided by Google in my example).</p>
 <p>Once a file is saved we can apply the configuration:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo netplan apply
-</code></pre></div><h6 id="wi-fi">Wi-Fi</h6>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo netplan apply
+</span></span></code></pre></div><h6 id="dhcp">DHCP</h6>
+<blockquote>
+<p>This is alternative variant for network configuration if you plan connecting your NUC to router or other hardware that has DCHP server configured.
+If you need to configure <a href="#static-ip">Static IP</a> - read the corresponding section.</p>
+</blockquote>
+<p>Ubuntu Server does not have DHCP enabled by default (so I could easily connect it to any network), but it is easy to enable (using <a href="https://netplan.io/">netplan</a>). We first create a configuration file <code>/etc/netplan/99_config.yaml</code> with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>  version: 2
+</span></span><span style="display:flex;"><span>  renderer: networkd
+</span></span><span style="display:flex;"><span>  ethernets:
+</span></span><span style="display:flex;"><span>    eno1:
+</span></span><span style="display:flex;"><span>      dhcp4: <span style="color:#00f">true</span>
+</span></span></code></pre></div><p><em>Make sure you use a proper interface name (<code>eno1</code> in my case), run <code>ip a</code> to find it out.</em></p>
+<p>Once a file is saved we can apply the configuration:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo netplan apply
+</span></span></code></pre></div><h6 id="wi-fi">Wi-Fi</h6>
 <p>I mostly use NUC from iMac that shares an internet connection over ethernet, but sometimes I also connect to it using my laptop, so it&rsquo;s good to have Wi-Fi working. There are many ways to do it, but the simplest one is using Network Manager, which has a great command-line interface. We first need to install it:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install network-manager
-</code></pre></div><p>We can now list all the network devices available and focus on the one with <code>wifi</code> type:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli d
-DEVICE             TYPE      STATE        CONNECTION
-wlp0s20f3          wifi      unavailable  --
-</code></pre></div><p>If its state is unavailable we first need to turn the radio module on:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli r wifi on
-</code></pre></div><p>And now we can see a list of available networks:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli d wifi list
-IN-USE  BSSID              SSID             MODE   CHAN  RATE        SIGNAL  BARS  SECURITY
-        00:00:00:00:00:00  MYWIFI           Infra  12    540 Mbit/s  80      ▂▄▆_  WPA2
-        00:00:00:00:00:00  MYWIFI_5G        Infra  72    540 Mbit/s  75      ▂▄▆_  WPA2
-</code></pre></div><p>Now we can connect to the network we want using its SSID:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nmcli d wifi connect MYWIFI_5G password myverysecurepassword
-</code></pre></div><h6 id="wake-on-lan">Wake-on-LAN</h6>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install network-manager
+</span></span></code></pre></div><p>We can now list all the network devices available and focus on the one with <code>wifi</code> type:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli d
+</span></span><span style="display:flex;"><span>DEVICE             TYPE      STATE        CONNECTION
+</span></span><span style="display:flex;"><span>wlp0s20f3          wifi      unavailable  --
+</span></span></code></pre></div><p>If its state is unavailable we first need to turn the radio module on:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli r wifi on
+</span></span></code></pre></div><p>And now we can see a list of available networks:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli d wifi list
+</span></span><span style="display:flex;"><span>IN-USE  BSSID              SSID             MODE   CHAN  RATE        SIGNAL  BARS  SECURITY
+</span></span><span style="display:flex;"><span>        00:00:00:00:00:00  MYWIFI           Infra  12    540 Mbit/s  80      ▂▄▆_  WPA2
+</span></span><span style="display:flex;"><span>        00:00:00:00:00:00  MYWIFI_5G        Infra  72    540 Mbit/s  75      ▂▄▆_  WPA2
+</span></span></code></pre></div><p>Now we can connect to the network we want using its SSID:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli d wifi connect MYWIFI_5G password myverysecurepassword
+</span></span></code></pre></div><h6 id="wake-on-lan">Wake-on-LAN</h6>
 <p>Intel NUC ethernet interface supports WOL, I used <code>ethtool</code> to enable it:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install ethtool
-$ sudo ethtool -s eno1 wol g
-</code></pre></div><p>In order to run it automatically on boot - we will create a <code>systemd</code> service, by adding the following into <code>/etc/systemd/system/wol.service</code>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#00f">[Unit]</span>
-Description=<span style="color:#a31515">Configure Wake On LAN</span>
-
-<span style="color:#00f">[Service]</span>
-Type=<span style="color:#a31515">oneshot</span>
-ExecStart=<span style="color:#a31515">/sbin/ethtool -s eno1 wol g</span>
-
-<span style="color:#00f">[Install]</span>
-WantedBy=<span style="color:#a31515">basic.target</span>
-</code></pre></div><p>and running:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl enable wol.service
-$ sudo systemctl start wol.service
-</code></pre></div><p><em>Your network interface may differ from <code>eno1</code>, you can find how to determine its name in <a href="#dhcp">DHCP Setup</a>.</em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install ethtool
+</span></span><span style="display:flex;"><span>$ sudo ethtool -s eno1 wol g
+</span></span></code></pre></div><p>In order to run it automatically on boot - we will create a <code>systemd</code> service, by adding the following into <code>/etc/systemd/system/wol.service</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#00f">[Unit]</span>
+</span></span><span style="display:flex;"><span>Description=<span style="color:#a31515">Configure Wake On LAN</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">[Service]</span>
+</span></span><span style="display:flex;"><span>Type=<span style="color:#a31515">oneshot</span>
+</span></span><span style="display:flex;"><span>ExecStart=<span style="color:#a31515">/sbin/ethtool -s eno1 wol g</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">[Install]</span>
+</span></span><span style="display:flex;"><span>WantedBy=<span style="color:#a31515">basic.target</span>
+</span></span></code></pre></div><p>and running:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl enable wol.service
+</span></span><span style="display:flex;"><span>$ sudo systemctl start wol.service
+</span></span></code></pre></div><p><em>Your network interface may differ from <code>eno1</code>, you can find how to determine its name in <a href="#dhcp">DHCP Setup</a>.</em></p>
 <p>I will talk about using wake on LAN in <a href="#daily-routine">Usage Daily Routine</a> section.</p>
 <h6 id="avahi">Avahi</h6>
 <p>If you want to have NUC machine available on the network by <code>hostname.local</code> name, we need to install avahi-daemon yet:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install -y avahi-daemon
-</code></pre></div><h4 id="cpu-frequency-scaling">CPU Frequency Scaling</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install -y avahi-daemon
+</span></span></code></pre></div><h4 id="cpu-frequency-scaling">CPU Frequency Scaling</h4>
 <p>This was probably the trickiest part of the entire setup (and the most time-consuming). A long time ago when I was actively using Linux on desktop, Intel processors had something called SpeedStep for CPU frequency scaling and the only thing you needed to do was install a package called <code>cpufreq</code> or <code>cpufreqd</code>, run it as a daemon and it worked liked a charm. Turns out Intel (maybe not only they) now has something called P-state (since Sandy Bridge), that does not even require any additional software, and scaling is managed by CPU itself (if I understood it correctly), which sounds cool, but did not work well for me. It has only 2 governors: performance and powersave, most of the time it was set to performance (even when NUC was idling), it was also enabling turbo boost when it was not necessary, so fan noise was always excessive. You can ensure you have this driver enabled by running the following command:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
-  intel_pstate
-</code></pre></div><p>I tried different approaches, installed different utilities, managed governor-related settings manually, it all didn&rsquo;t help much. Until I installed <a href="https://github.com/AdnanHodzic/auto-cpufreq">auto-cpufreq</a>, this was working fine, but not perfect: scaling lags, not scaling down enough on idle, CPU consumption (it&rsquo;s written in Python), turbo boost required manual adjustments. I am not trying to carp, I think <code>auto-cpufreq</code> is great, but I suppose it would better work on laptops (that have discharging states, unlike NUC). I decided to continue my research and saw many people were unhappy with that Intel P-state as well and the solution was simply to turn it off. I did it and I am now happy with the CPU Frequency Scaling that is achieved by using <code>acpi-cpufreq</code> fallback driver. To turn off P-state, you need to disable its module in GRUB config (so it is not loaded anymore on boot), by making sure there&rsquo;s the following line in <code>/etc/default/grub</code>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">GRUB_CMDLINE_LINUX_DEFAULT=<span style="color:#a31515">&#34;intel_pstate=disable&#34;</span>
-</code></pre></div><p><em>If you changed that line before, make sure you only add <code>intel_pstate=disable</code> there.</em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+</span></span><span style="display:flex;"><span>  intel_pstate
+</span></span></code></pre></div><p>I tried different approaches, installed different utilities, managed governor-related settings manually, it all didn&rsquo;t help much. Until I installed <a href="https://github.com/AdnanHodzic/auto-cpufreq">auto-cpufreq</a>, this was working fine, but not perfect: scaling lags, not scaling down enough on idle, CPU consumption (it&rsquo;s written in Python), turbo boost required manual adjustments. I am not trying to carp, I think <code>auto-cpufreq</code> is great, but I suppose it would better work on laptops (that have discharging states, unlike NUC). I decided to continue my research and saw many people were unhappy with that Intel P-state as well and the solution was simply to turn it off. I did it and I am now happy with the CPU Frequency Scaling that is achieved by using <code>acpi-cpufreq</code> fallback driver. To turn off P-state, you need to disable its module in GRUB config (so it is not loaded anymore on boot), by making sure there&rsquo;s the following line in <code>/etc/default/grub</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX_DEFAULT=<span style="color:#a31515">&#34;intel_pstate=disable&#34;</span>
+</span></span></code></pre></div><p><em>If you changed that line before, make sure you only add <code>intel_pstate=disable</code> there.</em></p>
 <p>After reboot you can see that <code>acpi-cpufreq</code> driver is used now:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
-  acpi-cpufreq
-</code></pre></div><p>By default, it should use <code>ondemand</code> scaling governor, which is usually a good choice for systems that you need to have both good performance and to be energy efficient when idling. Run the following to check the governor used:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-  ondemand
-</code></pre></div><p>If for some reason you have other governor set, you can google how to change it (they&rsquo;re so many ways and utils), but the simplest way in my opinion is by installing <code>cpufrequtils</code>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt install cpufrequtils
-</code></pre></div><p>And setting a government in its configuration file <code>/etc/default/cpufrequtils</code>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">ENABLE=<span style="color:#a31515">&#34;true&#34;</span>
-GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
-</code></pre></div><p>To list available scaling governors use <code>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+</span></span><span style="display:flex;"><span>  acpi-cpufreq
+</span></span></code></pre></div><p>By default, it should use <code>ondemand</code> scaling governor, which is usually a good choice for systems that you need to have both good performance and to be energy efficient when idling. Run the following to check the governor used:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+</span></span><span style="display:flex;"><span>  ondemand
+</span></span></code></pre></div><p>If for some reason you have other governor set, you can google how to change it (they&rsquo;re so many ways and utils), but the simplest way in my opinion is by installing <code>cpufrequtils</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install cpufrequtils
+</span></span></code></pre></div><p>And setting a government in its configuration file <code>/etc/default/cpufrequtils</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>ENABLE=<span style="color:#a31515">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
+</span></span></code></pre></div><p>To list available scaling governors use <code>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors</code> command.</p>
 <p>So that&rsquo;s it, after that my NUC was up and running and ready for work usage. The rest of the software installation and configuration process was very limited to my specific needs and is not worth sharing.</p>
 <h2 id="usage">Usage</h2>
 <h6 id="overview">Overview</h6>
@@ -347,8 +387,8 @@ GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
 </ol>
 <p>Even though I was sure I&rsquo;d go with the first scenario, I decided to give the third one a shot and make an experiment (before I bought NUC). I have prepared a similar environment on Raspberry Pi and tried working with it using Visual Studio Code Remote plugin. I was very skeptical about it, but it worked and worked well (even with a very slow Raspberry Pi 3 I/O and 100mbps connection). I changed my mind and decided I will proceed with this scenario first and if something goes wrong (it did not) I can always fall back to the first one.</p>
 <p>So, since the end of October 2020, I am using Visual Studio Code Remote - SSH for developing on NUC from my mac computers. It works perfectly flawlessly. Usage experience is not different from what I used to locally. Things like searching files (or in files) are even working faster (thanks to NVMe SSD 😀). It both provides access to the remote project directory using a built-in terminal and forwards all the opened ports (which can be adjusted manually) to my client machine (so I can open my web apps like they are running locally). For all this time I saw Visual Studio Code hanging a bit only once (and I am sure it has nothing to do with NUC, but with vscode itself). Since my working project had a huge amount of files, I had to increase <code>fs.inotify.max_user_watches</code> limit by adding the following to <code>/etc/sysctl.conf</code>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">fs.inotify.max_user_watches=<span style="color:#a31515">524288</span>
-</code></pre></div><p><em>You can read more about this issue <a href="https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc">here</a>.</em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>fs.inotify.max_user_watches=<span style="color:#a31515">524288</span>
+</span></span></code></pre></div><p><em>You can read more about this issue <a href="https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc">here</a>.</em></p>
 <p><img src="/img/blog/11/multiple.jpg" alt="Multiple"></p>
 <p>Once the project setup is ready, you can even run the same project on multiple computers and they will all use the same environment (both connecting to the same codebase and locally alike running application without having a single bit of those present in the system).</p>
 <p>Developing on the NUC using Wi-Fi is very comfortable too (maybe not that smooth sometimes, if you pay attention), I could manage to get a better signal (when tested its speed was 100-300mbps), but this all is enough for me. It still works much faster than when I do local development on my old MacBook Pro! (Read more about performance in <a href="#conclusion">conclusion</a> section). Speaking of connection speed, when I was thinking about building a custom PC for this purpose, I wanted it to have a Thunderbolt port because I was sure I will need those 40gbps to have that local development experience feeling (especially if I&rsquo;d went with the first usage scenario); when I started considering Intel NUC - I was happy it had this port as well. I never had a chance to try it so far, turned out you need a special Thunderbolt data transfer cable (and not the regular USB Type-C, I was silly enough to think the one from MacBook&rsquo;s charger would work) and their price is high, especially if you want to have something longer than 1m. 1gbps ethernet connection works fine for me and I don&rsquo;t know if I will ever need more, but at some point, I think I would like to finally try that Thunderbolt thing.</p>
@@ -390,12 +430,29 @@ GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
-  <line x1="7" y1="7" x2="7" y2="7"/>
-
+  <div class='container sep-before'><div class='last-updated'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" />
+<polygon points="18 2 22 6 12 16 8 16 8 12 18 2" />
+</svg>
+<span class='screen-reader-text'>Last updated: </span>
+      <time class='entry-date' datetime='2023-09-30T15:11:00&#43;03:00'>2023, Sep 30</time>
+    </div><div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
 </svg>
 <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/development/'>development</a>, <a class='tag' href='/tags/ubuntu/'>ubuntu</a>, <a class='tag' href='/tags/intel-nuc/'>intel nuc</a>, <a class='tag' href='/tags/hardware/'>hardware</a>, <a class='tag' href='/tags/workflow/'>workflow</a>, <a class='tag' href='/tags/review/'>review</a></div>
 
@@ -408,12 +465,16 @@ GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
       <a href='/2011/09/09/django-local-development-nginx-osx/'>
-        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="20" y1="12" x2="4" y2="12"/>
-  <polyline points="10 18 4 12 10 6"/>
-
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>Django local development with nginx on OSX</a>
@@ -429,24 +490,21 @@ GOVERNOR=<span style="color:#a31515">&#34;ondemand&#34;</span>
         <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
     <ul><li>
         <a href='https://github.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
 </svg>
 </a>
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2010-2021 Dima Moroz </p>
+  <p> &copy; 2010-2023 Dima Moroz </p>
 </div>
 
         </div>

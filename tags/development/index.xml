@@ -5,6 +5,7 @@
     <link>https://dimamoroz.com/tags/development/</link>
     <description>Recent content in development on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Tue, 09 Mar 2021 17:15:53 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intel NUC as a backend for development</title>
@@ -13,7 +14,7 @@
       
       <guid>https://dimamoroz.com/2021/03/09/intel-nuc-for-development/</guid>
       <description>A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.
-Table of contents  Rationale Hardware Software  Initial Setup Disk Network  DHCP Wi-Fi Wake-on-LAN Avahi   CPU Frequency Scaling   Usage  Overview Daily Routine   Conclusion  Pros Cons    Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.</description>
+Table of contents Rationale Hardware Software Initial Setup Disk Network Static IP DHCP Wi-Fi Wake-on-LAN Avahi CPU Frequency Scaling Usage Overview Daily Routine Conclusion Pros Cons Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.</description>
     </item>
     
   </channel>

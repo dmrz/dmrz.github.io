@@ -23,7 +23,7 @@ $ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDae
 <meta property='og:site_name' content='Dima Moroz'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/b5995355510b31e51ab6655f0c23832c?s=256'><meta property='article:section' content='blog'><meta property='article:tag' content='django'><meta property='article:tag' content='python'><meta property='article:tag' content='mac'><meta property='article:tag' content='osx'><meta property='article:tag' content='nginx'><meta property='article:published_time' content='2011-09-09T16:30:00&#43;02:00'/><meta property='article:modified_time' content='2011-09-09T16:30:00&#43;02:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.119.0">
 
   <title>Django local development with nginx on OSX • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/'>
@@ -37,14 +37,15 @@ $ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDae
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-11219276-3', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
   
 
 </head>
@@ -82,34 +83,46 @@ if (!doNotTrack) {
 
     </div>
     <div class='entry-meta'>
-  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-  <line x1="16" y1="2" x2="16" y2="6"/>
-  <line x1="8" y1="2" x2="8" y2="6"/>
-  <line x1="3" y1="10" x2="21" y2="10"/>
-
+  <span class='posted-on'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+<line x1="16" y1="2" x2="16" y2="6" />
+<line x1="8" y1="2" x2="8" y2="6" />
+<line x1="3" y1="10" x2="21" y2="10" />
 </svg>
 <span class='screen-reader-text'>Posted on </span>
   <time class='entry-date' datetime='2011-09-09T16:30:00&#43;02:00'>2011, Sep 09</time>
 </span>
 
-  <span class='byline'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
-  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
-
+  <span class='byline'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1" />
+<path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z" />
 </svg>
 <span class='screen-reader-text'> by </span><a href='/authors/dmrz'>Dima Moroz</a></span>
   
-<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <circle cx="12" cy="12" r="10"/>
-  <polyline points="12 6 12 12 15 15"/>
-
+<span class='reading-time'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><circle cx="12" cy="12" r="10" />
+<polyline points="12 6 12 12 15 15" />
 </svg>
 3 mins read
 </span>
@@ -126,85 +139,89 @@ if (!doNotTrack) {
 
   <div class='container entry-content'>
   <p>Installing nginx using brew is quite easy:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install nginx
-</code></pre></div><p>Post install instruction explains how to run nginx on starup by adding it&rsquo;s launchd config to <em>~/Library/LaunchAgents/</em> and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo nginx
-</code></pre></div><p>But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to <em>/Library/LaunchDaemons/</em> (so it runs even before any user is logged in):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ <span style="color:#008000"># nginx version number may vary</span>
-</code></pre></div><p>And slightly edit it, so it finally looks like:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#00f">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style="color:#00f">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
-&lt;plist version=<span style="color:#a31515">&#34;1.0&#34;</span>&gt;
-    &lt;dict&gt;
-    &lt;key&gt;Label&lt;/key&gt;
-    &lt;string&gt;nginx&lt;/string&gt;
-    &lt;key&gt;RunAtLoad&lt;/key&gt;
-    &lt;true/&gt;
-    &lt;key&gt;KeepAlive&lt;/key&gt;
-    &lt;true/&gt;
-    &lt;key&gt;UserName&lt;/key&gt;
-    &lt;string&gt;root&lt;/string&gt;
-    &lt;key&gt;ProgramArguments&lt;/key&gt;
-    &lt;array&gt;
-        &lt;string&gt;/usr/local/Cellar/nginx/1.0.6/sbin/nginx&lt;/string&gt;
-        &lt;string&gt;-g&lt;/string&gt;
-        &lt;string&gt;daemon off;&lt;/string&gt;
-    &lt;/array&gt;
-    &lt;key&gt;WorkingDirectory&lt;/key&gt;
-    &lt;string&gt;/usr/local&lt;/string&gt;
-    &lt;/dict&gt;
-&lt;/plist&gt;
-</code></pre></div><p>I set a Label option to nginx, so I can easily restart it with:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo launchctl stop nginx <span style="color:#008000"># this will stop and start nginx again since OnDemand option is set to false by default</span>
-</code></pre></div><p>UserName is set to root, so nginx runs on port 80. If you need to pass some additional arguments to nginx executable, you can list them in ProgramArguments.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ brew install nginx
+</span></span></code></pre></div><p>Post install instruction explains how to run nginx on starup by adding it&rsquo;s launchd config to <em>~/Library/LaunchAgents/</em> and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nginx
+</span></span></code></pre></div><p>But I want to have nginx running on port 80 when system starts. To accomplish that, I copy nginx launchd config to <em>/Library/LaunchDaemons/</em> (so it runs even before any user is logged in):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo cp /usr/local/Cellar/nginx/1.0.6/org.nginx.nginx.plist /Library/LaunchDaemons/ <span style="color:#008000"># nginx version number may vary</span>
+</span></span></code></pre></div><p>And slightly edit it, so it finally looks like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#00f">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;plist version=<span style="color:#a31515">&#34;1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;dict&gt;
+</span></span><span style="display:flex;"><span>    &lt;key&gt;Label&lt;/key&gt;
+</span></span><span style="display:flex;"><span>    &lt;string&gt;nginx&lt;/string&gt;
+</span></span><span style="display:flex;"><span>    &lt;key&gt;RunAtLoad&lt;/key&gt;
+</span></span><span style="display:flex;"><span>    &lt;true/&gt;
+</span></span><span style="display:flex;"><span>    &lt;key&gt;KeepAlive&lt;/key&gt;
+</span></span><span style="display:flex;"><span>    &lt;true/&gt;
+</span></span><span style="display:flex;"><span>    &lt;key&gt;UserName&lt;/key&gt;
+</span></span><span style="display:flex;"><span>    &lt;string&gt;root&lt;/string&gt;
+</span></span><span style="display:flex;"><span>    &lt;key&gt;ProgramArguments&lt;/key&gt;
+</span></span><span style="display:flex;"><span>    &lt;array&gt;
+</span></span><span style="display:flex;"><span>        &lt;string&gt;/usr/local/Cellar/nginx/1.0.6/sbin/nginx&lt;/string&gt;
+</span></span><span style="display:flex;"><span>        &lt;string&gt;-g&lt;/string&gt;
+</span></span><span style="display:flex;"><span>        &lt;string&gt;daemon off;&lt;/string&gt;
+</span></span><span style="display:flex;"><span>    &lt;/array&gt;
+</span></span><span style="display:flex;"><span>    &lt;key&gt;WorkingDirectory&lt;/key&gt;
+</span></span><span style="display:flex;"><span>    &lt;string&gt;/usr/local&lt;/string&gt;
+</span></span><span style="display:flex;"><span>    &lt;/dict&gt;
+</span></span><span style="display:flex;"><span>&lt;/plist&gt;
+</span></span></code></pre></div><p>I set a Label option to nginx, so I can easily restart it with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo launchctl stop nginx <span style="color:#008000"># this will stop and start nginx again since OnDemand option is set to false by default</span>
+</span></span></code></pre></div><p>UserName is set to root, so nginx runs on port 80. If you need to pass some additional arguments to nginx executable, you can list them in ProgramArguments.</p>
 <p>Further, I edit nginx config, which is located at <em>/usr/local/etc/nginx/nginx.conf</em> and add my generic code snippet I use everywhere for local Django development with nginx (it&rsquo;s a server directive so I usually add it before the last closing bracket):</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#00f">server</span> {
-    <span style="color:#00f">server_name</span> ~<span style="color:#a31515">^(?P&lt;subdomain&gt;\w+\.)?(?P&lt;project_name&gt;\w+)\.dev$;</span>
-    <span style="color:#a31515">access_log</span> off;
-    <span style="color:#00f">gzip</span> off;
-    <span style="color:#00f">set</span> $home_dir <span style="color:#a31515">/Users/foomor</span>;
-    <span style="color:#00f">set</span> $project_path $home_dir/Projects/$project_name;
-    <span style="color:#00f">set</span> $python_version 2<span style="color:#a31515">.7</span>;
-    <span style="color:#00f">set</span> $virtualenv_path $home_dir/.virtualenvs/$project_name/lib/python$python_version/site-packages;
-
-    <span style="color:#00f">location</span> ~ <span style="color:#a31515">^/(static|media)/(.*)$</span> {
-        <span style="color:#00f">alias</span> $project_path/$1/$2;
-    }
-
-    <span style="color:#00f">location</span> <span style="color:#a31515">^~</span> <span style="color:#a31515">/static/admin</span> {
-        <span style="color:#00f">alias</span> $virtualenv_path/django/contrib/admin/media;
-    }
-
-    <span style="color:#00f">location</span> <span style="color:#a31515">/__debug__/m</span> {
-        <span style="color:#00f">alias</span> $virtualenv_path/debug_toolbar/media/debug_toolbar;
-    }
-
-    <span style="color:#00f">location</span> <span style="color:#a31515">/favicon.ico</span> {
-        <span style="color:#00f">alias</span> $project_path/static/img/favicon.png;
-    }
-
-    <span style="color:#00f">location</span> <span style="color:#a31515">/</span> {
-        <span style="color:#00f">proxy_set_header</span> <span style="color:#a31515">Host</span> $host;
-        <span style="color:#00f">proxy_pass</span> <span style="color:#a31515">http://127.0.0.1:8000</span>;
-        <span style="color:#00f">client_max_body_size</span> 100m;
-    }
-}
-</code></pre></div><p>I have a personal development convention, that all local Django projects are located within <em>~/Projects</em> directory, virtual environments are located within <em>~/.virtualenvs</em> and virtual environment name is similar to it&rsquo;s corresponding project name. Project assets are located within <em>static</em> directory in the project root and uploaded files are located within <em>media</em>. In addition to above, nginx also serves django admin static files, <a href="http://pypi.python.org/pypi/django-debug-toolbar">django-debug-toolbar</a> and favicon alias. Logging access is disabled until I need it. If you are going to use this config, set appropriate values to <em>$home_dir</em>, <em>$project_path</em>, <em>$python_version</em> and <em>$virtualenv_path</em> variables.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#00f">server</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">server_name</span> ~<span style="color:#a31515">^(?P&lt;subdomain&gt;\w+\.)?(?P&lt;project_name&gt;\w+)\.dev$;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a31515">access_log</span> off;
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">gzip</span> off;
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">set</span> $home_dir <span style="color:#a31515">/Users/foomor</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">set</span> $project_path $home_dir/Projects/$project_name;
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">set</span> $python_version 2<span style="color:#a31515">.7</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">set</span> $virtualenv_path $home_dir/.virtualenvs/$project_name/lib/python$python_version/site-packages;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">location</span> ~ <span style="color:#a31515">^/(static|media)/(.*)$</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">alias</span> $project_path/$1/$2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">location</span> <span style="color:#a31515">^~</span> <span style="color:#a31515">/static/admin</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">alias</span> $virtualenv_path/django/contrib/admin/media;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">location</span> <span style="color:#a31515">/__debug__/m</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">alias</span> $virtualenv_path/debug_toolbar/media/debug_toolbar;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">location</span> <span style="color:#a31515">/favicon.ico</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">alias</span> $project_path/static/img/favicon.png;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">location</span> <span style="color:#a31515">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">proxy_set_header</span> <span style="color:#a31515">Host</span> $host;
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">proxy_pass</span> <span style="color:#a31515">http://127.0.0.1:8000</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">client_max_body_size</span> 100m;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I have a personal development convention, that all local Django projects are located within <em>~/Projects</em> directory, virtual environments are located within <em>~/.virtualenvs</em> and virtual environment name is similar to it&rsquo;s corresponding project name. Project assets are located within <em>static</em> directory in the project root and uploaded files are located within <em>media</em>. In addition to above, nginx also serves django admin static files, <a href="http://pypi.python.org/pypi/django-debug-toolbar">django-debug-toolbar</a> and favicon alias. Logging access is disabled until I need it. If you are going to use this config, set appropriate values to <em>$home_dir</em>, <em>$project_path</em>, <em>$python_version</em> and <em>$virtualenv_path</em> variables.</p>
 <p>My local DNS transfers all requests made to *.dev to 127.0.0.1, server_name captures project name in domain name and all project static files are served with nginx. For instance I have a project named <em>mydjangoapp</em> and it&rsquo;s development server (<em>python manage.py runserver</em>) is currently running, so I just open <a href="http://mydjangoapp.dev">http://mydjangoapp.dev</a> in the browser and it works.</p>
 <p>If you do not have a local DNS that will map *.dev to 127.0.0.1, you will have do that in your <em>/etc/hosts</em> file.</p>
 <p>When configuration file is ready, you can finally load nginx launchd config and it will run every time on the system startup:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo launchctl load -w /Library/LaunchDaemons/org.nginx.nginx.plist
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo launchctl load -w /Library/LaunchDaemons/org.nginx.nginx.plist
+</span></span></code></pre></div>
 </div>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
-  <line x1="7" y1="7" x2="7" y2="7"/>
-
+  <div class='container sep-before'><div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
 </svg>
 <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/django/'>django</a>, <a class='tag' href='/tags/python/'>python</a>, <a class='tag' href='/tags/mac/'>mac</a>, <a class='tag' href='/tags/osx/'>osx</a>, <a class='tag' href='/tags/nginx/'>nginx</a></div>
 
@@ -217,23 +234,31 @@ if (!doNotTrack) {
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
       <a href='/2011/09/06/django-development-environment-osx/'>
-        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="20" y1="12" x2="4" y2="12"/>
-  <polyline points="10 18 4 12 10 6"/>
-
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>Django development environment on OSX</a>
     </div><div class='next-entry sep-before'>
       <a href='/2021/03/09/intel-nuc-for-development/'>
-        <span class='screen-reader-text'>Next post: </span>Intel NUC as a backend for development<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-
+        <span class='screen-reader-text'>Next post: </span>Intel NUC as a backend for development<span aria-hidden='true'>Next <svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="4" y1="12" x2="20" y2="12" />
+<polyline points="14 6 20 12 14 18" />
 </svg>
 </span>
       </a>
@@ -249,24 +274,21 @@ if (!doNotTrack) {
         <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
     <ul><li>
         <a href='https://github.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
 </svg>
 </a>
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2010-2021 Dima Moroz </p>
+  <p> &copy; 2010-2023 Dima Moroz </p>
 </div>
 
         </div>
