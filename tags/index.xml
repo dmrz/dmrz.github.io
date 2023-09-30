@@ -2,215 +2,215 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Dima Moroz</title>
-    <link>https://dimamoroz.com/tags/</link>
+    <link>https://dmrz.dev/tags/</link>
     <description>Recent content in Tags on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Mar 2021 17:15:53 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Mar 2021 17:15:53 +0200</lastBuildDate><atom:link href="https://dmrz.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>development</title>
-      <link>https://dimamoroz.com/tags/development/</link>
+      <link>https://dmrz.dev/tags/development/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/development/</guid>
+      <guid>https://dmrz.dev/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hardware</title>
-      <link>https://dimamoroz.com/tags/hardware/</link>
+      <link>https://dmrz.dev/tags/hardware/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/hardware/</guid>
+      <guid>https://dmrz.dev/tags/hardware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>intel nuc</title>
-      <link>https://dimamoroz.com/tags/intel-nuc/</link>
+      <link>https://dmrz.dev/tags/intel-nuc/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/intel-nuc/</guid>
+      <guid>https://dmrz.dev/tags/intel-nuc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>review</title>
-      <link>https://dimamoroz.com/tags/review/</link>
+      <link>https://dmrz.dev/tags/review/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/review/</guid>
+      <guid>https://dmrz.dev/tags/review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>https://dimamoroz.com/tags/ubuntu/</link>
+      <link>https://dmrz.dev/tags/ubuntu/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/ubuntu/</guid>
+      <guid>https://dmrz.dev/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>workflow</title>
-      <link>https://dimamoroz.com/tags/workflow/</link>
+      <link>https://dmrz.dev/tags/workflow/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/workflow/</guid>
+      <guid>https://dmrz.dev/tags/workflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>django</title>
-      <link>https://dimamoroz.com/tags/django/</link>
+      <link>https://dmrz.dev/tags/django/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/django/</guid>
+      <guid>https://dmrz.dev/tags/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mac</title>
-      <link>https://dimamoroz.com/tags/mac/</link>
+      <link>https://dmrz.dev/tags/mac/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/mac/</guid>
+      <guid>https://dmrz.dev/tags/mac/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nginx</title>
-      <link>https://dimamoroz.com/tags/nginx/</link>
+      <link>https://dmrz.dev/tags/nginx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/nginx/</guid>
+      <guid>https://dmrz.dev/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>osx</title>
-      <link>https://dimamoroz.com/tags/osx/</link>
+      <link>https://dmrz.dev/tags/osx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/osx/</guid>
+      <guid>https://dmrz.dev/tags/osx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://dimamoroz.com/tags/python/</link>
+      <link>https://dmrz.dev/tags/python/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/python/</guid>
+      <guid>https://dmrz.dev/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rails</title>
-      <link>https://dimamoroz.com/tags/rails/</link>
+      <link>https://dmrz.dev/tags/rails/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/rails/</guid>
+      <guid>https://dmrz.dev/tags/rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>redmine</title>
-      <link>https://dimamoroz.com/tags/redmine/</link>
+      <link>https://dmrz.dev/tags/redmine/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/redmine/</guid>
+      <guid>https://dmrz.dev/tags/redmine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ruby</title>
-      <link>https://dimamoroz.com/tags/ruby/</link>
+      <link>https://dmrz.dev/tags/ruby/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/ruby/</guid>
+      <guid>https://dmrz.dev/tags/ruby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://dimamoroz.com/tags/git/</link>
+      <link>https://dmrz.dev/tags/git/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/git/</guid>
+      <guid>https://dmrz.dev/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://dimamoroz.com/tags/linux/</link>
+      <link>https://dmrz.dev/tags/linux/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/linux/</guid>
+      <guid>https://dmrz.dev/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tips</title>
-      <link>https://dimamoroz.com/tags/tips/</link>
+      <link>https://dmrz.dev/tags/tips/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/tips/</guid>
+      <guid>https://dmrz.dev/tags/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rsa</title>
-      <link>https://dimamoroz.com/tags/rsa/</link>
+      <link>https://dmrz.dev/tags/rsa/</link>
       <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/rsa/</guid>
+      <guid>https://dmrz.dev/tags/rsa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ssh</title>
-      <link>https://dimamoroz.com/tags/ssh/</link>
+      <link>https://dmrz.dev/tags/ssh/</link>
       <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/ssh/</guid>
+      <guid>https://dmrz.dev/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pitfalls</title>
-      <link>https://dimamoroz.com/tags/pitfalls/</link>
+      <link>https://dmrz.dev/tags/pitfalls/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/pitfalls/</guid>
+      <guid>https://dmrz.dev/tags/pitfalls/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtualenv</title>
-      <link>https://dimamoroz.com/tags/virtualenv/</link>
+      <link>https://dmrz.dev/tags/virtualenv/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/virtualenv/</guid>
+      <guid>https://dmrz.dev/tags/virtualenv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pil</title>
-      <link>https://dimamoroz.com/tags/pil/</link>
+      <link>https://dmrz.dev/tags/pil/</link>
       <pubDate>Wed, 13 Oct 2010 11:49:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/pil/</guid>
+      <guid>https://dmrz.dev/tags/pil/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pip</title>
-      <link>https://dimamoroz.com/tags/pip/</link>
+      <link>https://dmrz.dev/tags/pip/</link>
       <pubDate>Fri, 08 Oct 2010 09:34:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/tags/pip/</guid>
+      <guid>https://dmrz.dev/tags/pip/</guid>
       <description></description>
     </item>
     

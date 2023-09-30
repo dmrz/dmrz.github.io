@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>django on Dima Moroz</title>
-    <link>https://dimamoroz.com/tags/django/</link>
+    <link>https://dmrz.dev/tags/django/</link>
     <description>Recent content in django on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Sep 2011 16:30:00 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Sep 2011 16:30:00 +0200</lastBuildDate><atom:link href="https://dmrz.dev/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django local development with nginx on OSX</title>
-      <link>https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/</link>
+      <link>https://dmrz.dev/2011/09/09/django-local-development-nginx-osx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/</guid>
+      <guid>https://dmrz.dev/2011/09/09/django-local-development-nginx-osx/</guid>
       <description>&lt;p&gt;Installing nginx using brew is quite easy:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ brew install nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Post install instruction explains how to run nginx on starup by adding it&amp;rsquo;s launchd config to &lt;em&gt;~/Library/LaunchAgents/&lt;/em&gt; and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:&lt;/p&gt;
@@ -24,29 +24,29 @@
     
     <item>
       <title>Django development environment on OSX</title>
-      <link>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</link>
+      <link>https://dmrz.dev/2011/09/06/django-development-environment-osx/</link>
       <pubDate>Tue, 06 Sep 2011 15:05:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</guid>
+      <guid>https://dmrz.dev/2011/09/06/django-development-environment-osx/</guid>
       <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Setting up django settings environment within a python script</title>
-      <link>https://dimamoroz.com/2011/03/14/setting-django-settings-environment-within-python-script/</link>
+      <link>https://dmrz.dev/2011/03/14/setting-django-settings-environment-within-python-script/</link>
       <pubDate>Mon, 14 Mar 2011 12:55:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/03/14/setting-django-settings-environment-within-python-script/</guid>
+      <guid>https://dmrz.dev/2011/03/14/setting-django-settings-environment-within-python-script/</guid>
       <description>Found at softwaremaniacs.org
 import settings from django.core.management import setup_environ setup_environ(settings) NOTE: Deprecated in Django 1.4 (&amp;ldquo;Release notes&amp;rdquo;)</description>
     </item>
     
     <item>
       <title>Ubuntu PIL JPEG support</title>
-      <link>https://dimamoroz.com/2010/10/13/ubuntu-pil-jpeg-support/</link>
+      <link>https://dmrz.dev/2010/10/13/ubuntu-pil-jpeg-support/</link>
       <pubDate>Wed, 13 Oct 2010 11:49:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/10/13/ubuntu-pil-jpeg-support/</guid>
+      <guid>https://dmrz.dev/2010/10/13/ubuntu-pil-jpeg-support/</guid>
       <description>&lt;p&gt;Got an IOError exception, while trying to process image using PIL, with a next error message:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encoder jpeg not available
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;PIL is installed within python virtual environment. Figured out, I have no development files for libjpeg installed, so PIL compiles without JPEG support.&lt;/p&gt;</description>
@@ -54,10 +54,10 @@ import settings from django.core.management import setup_environ setup_environ(s
     
     <item>
       <title>Hello World</title>
-      <link>https://dimamoroz.com/2010/04/30/hello-world/</link>
+      <link>https://dmrz.dev/2010/04/30/hello-world/</link>
       <pubDate>Fri, 30 Apr 2010 12:07:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/04/30/hello-world/</guid>
+      <guid>https://dmrz.dev/2010/04/30/hello-world/</guid>
       <description>&lt;p&gt;This is actually not the first time I am launching a blog. I have archived all my old (mostly russian) articles at &lt;a href=&#34;http://dimaka.wordpress.com&#34;&gt;wordpress.com&lt;/a&gt;, first post is dated from 2007, big amount of things changed since those times, I have changed, my interests had been changed. Also, this is more home page of mine, than just a blog. It will involve a lot of things I need, I use and I want to share with others.&lt;/p&gt;
 &lt;p&gt;I attend and I do like to read things on web in English, I like to deal with people using this language, that is why entire site and blog entries will be written in it. I am from Ukraine, that is not my native language, I still study it, so either my speech and texts are not fluent. Just feel free to ask anything in a case of misunderstanding.&lt;/p&gt;</description>
     </item>

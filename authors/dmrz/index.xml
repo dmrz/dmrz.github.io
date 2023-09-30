@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dmrz on Dima Moroz</title>
-    <link>https://dimamoroz.com/authors/dmrz/</link>
+    <link>https://dmrz.dev/authors/dmrz/</link>
     <description>Recent content in dmrz on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Mar 2021 17:15:53 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/authors/dmrz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Mar 2021 17:15:53 +0200</lastBuildDate><atom:link href="https://dmrz.dev/authors/dmrz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intel NUC as a backend for development</title>
-      <link>https://dimamoroz.com/2021/03/09/intel-nuc-for-development/</link>
+      <link>https://dmrz.dev/2021/03/09/intel-nuc-for-development/</link>
       <pubDate>Tue, 09 Mar 2021 17:15:53 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2021/03/09/intel-nuc-for-development/</guid>
+      <guid>https://dmrz.dev/2021/03/09/intel-nuc-for-development/</guid>
       <description>A comprehensive story on how I started using Intel NUC as a backend for local or remote development, while my code editor (on any machine) is used as a thin client.
 Table of contents Rationale Hardware Software Initial Setup Disk Network Static IP DHCP Wi-Fi Wake-on-LAN Avahi CPU Frequency Scaling Usage Overview Daily Routine Conclusion Pros Cons Rationale There were 2 problems, using a dedicated machine for development, I thought I might solve.</description>
     </item>
     
     <item>
       <title>Django local development with nginx on OSX</title>
-      <link>https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/</link>
+      <link>https://dmrz.dev/2011/09/09/django-local-development-nginx-osx/</link>
       <pubDate>Fri, 09 Sep 2011 16:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/09/09/django-local-development-nginx-osx/</guid>
+      <guid>https://dmrz.dev/2011/09/09/django-local-development-nginx-osx/</guid>
       <description>&lt;p&gt;Installing nginx using brew is quite easy:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ brew install nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Post install instruction explains how to run nginx on starup by adding it&amp;rsquo;s launchd config to &lt;em&gt;~/Library/LaunchAgents/&lt;/em&gt; and it will run nginx on port 8080. If you need to run nginx on port 80 you have to run it as root:&lt;/p&gt;
@@ -34,29 +34,29 @@ Table of contents Rationale Hardware Software Initial Setup Disk Network Static 
     
     <item>
       <title>Django development environment on OSX</title>
-      <link>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</link>
+      <link>https://dmrz.dev/2011/09/06/django-development-environment-osx/</link>
       <pubDate>Tue, 06 Sep 2011 15:05:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/09/06/django-development-environment-osx/</guid>
+      <guid>https://dmrz.dev/2011/09/06/django-development-environment-osx/</guid>
       <description>&lt;p&gt;This post is mostly about how I install development environment for Python and Django on OS X and my experience. If you want just a quick installation guide, follow &lt;a href=&#34;https://gist.github.com/902296&#34;&gt;this link&lt;/a&gt;, there is a really great tutorial about OSX Developer System installation.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Setting up django settings environment within a python script</title>
-      <link>https://dimamoroz.com/2011/03/14/setting-django-settings-environment-within-python-script/</link>
+      <link>https://dmrz.dev/2011/03/14/setting-django-settings-environment-within-python-script/</link>
       <pubDate>Mon, 14 Mar 2011 12:55:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/03/14/setting-django-settings-environment-within-python-script/</guid>
+      <guid>https://dmrz.dev/2011/03/14/setting-django-settings-environment-within-python-script/</guid>
       <description>Found at softwaremaniacs.org
 import settings from django.core.management import setup_environ setup_environ(settings) NOTE: Deprecated in Django 1.4 (&amp;ldquo;Release notes&amp;rdquo;)</description>
     </item>
     
     <item>
       <title>Redmine: sending email using google apps</title>
-      <link>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</link>
+      <link>https://dmrz.dev/2011/03/13/redmine-sending-email-using-google-apps/</link>
       <pubDate>Sun, 13 Mar 2011 15:08:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/03/13/redmine-sending-email-using-google-apps/</guid>
+      <guid>https://dmrz.dev/2011/03/13/redmine-sending-email-using-google-apps/</guid>
       <description>&lt;p&gt;I was facing the next error with a config variant created using Redmine documentation:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;530 5.7.0 Must issue a STARTTLS command first
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
@@ -64,39 +64,39 @@ import settings from django.core.management import setup_environ setup_environ(s
     
     <item>
       <title>Some useful git tips</title>
-      <link>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</link>
+      <link>https://dmrz.dev/2011/03/09/some-useful-git-tips/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</guid>
+      <guid>https://dmrz.dev/2011/03/09/some-useful-git-tips/</guid>
       <description>&lt;p&gt;Here will be useful git tips and just repeating commands I often use but can&amp;rsquo;t remember.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Creating a public rsa key when you already have a private one</title>
-      <link>https://dimamoroz.com/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</link>
+      <link>https://dmrz.dev/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</link>
       <pubDate>Thu, 09 Dec 2010 12:06:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</guid>
+      <guid>https://dmrz.dev/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/</guid>
       <description>To create a public rsa key using a private one, simply type:
 $ ssh-keygen -y -f /path/to/private_rsa &amp;gt; /path/to/public_rsa Note that it is not adding user@hostname, so if you need it, add this in the end of public_rsa file with a leading space symbol</description>
     </item>
     
     <item>
       <title>Ubuntu Python virtual environments pitfalls</title>
-      <link>https://dimamoroz.com/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</link>
+      <link>https://dmrz.dev/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</guid>
+      <guid>https://dmrz.dev/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</guid>
       <description>&lt;p&gt;I always face several pitfalls, while creating isolated python environment on my laptop, where i&amp;rsquo;m running Ubuntu.&lt;/p&gt;
 &lt;p&gt;So decided to make a memory note how to fight them, probably it can be helpful to anyone else.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Ubuntu PIL JPEG support</title>
-      <link>https://dimamoroz.com/2010/10/13/ubuntu-pil-jpeg-support/</link>
+      <link>https://dmrz.dev/2010/10/13/ubuntu-pil-jpeg-support/</link>
       <pubDate>Wed, 13 Oct 2010 11:49:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/10/13/ubuntu-pil-jpeg-support/</guid>
+      <guid>https://dmrz.dev/2010/10/13/ubuntu-pil-jpeg-support/</guid>
       <description>&lt;p&gt;Got an IOError exception, while trying to process image using PIL, with a next error message:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encoder jpeg not available
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;PIL is installed within python virtual environment. Figured out, I have no development files for libjpeg installed, so PIL compiles without JPEG support.&lt;/p&gt;</description>
@@ -104,10 +104,10 @@ $ ssh-keygen -y -f /path/to/private_rsa &amp;gt; /path/to/public_rsa Note that i
     
     <item>
       <title>Python virtual environment on Ubuntu</title>
-      <link>https://dimamoroz.com/2010/10/08/python-virtual-environment-ubuntu/</link>
+      <link>https://dmrz.dev/2010/10/08/python-virtual-environment-ubuntu/</link>
       <pubDate>Fri, 08 Oct 2010 09:34:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/10/08/python-virtual-environment-ubuntu/</guid>
+      <guid>https://dmrz.dev/2010/10/08/python-virtual-environment-ubuntu/</guid>
       <description>&lt;p&gt;&lt;em&gt;I had some mess around the process of installing those tools on my laptop running Ubuntu, so my decision was to write and explain everything step by step just in a case for the memo and probably a useful post for anyone as well.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Who are those lads?&lt;/p&gt;
 &lt;ul&gt;
@@ -120,10 +120,10 @@ $ ssh-keygen -y -f /path/to/private_rsa &amp;gt; /path/to/public_rsa Note that i
     
     <item>
       <title>Hello World</title>
-      <link>https://dimamoroz.com/2010/04/30/hello-world/</link>
+      <link>https://dmrz.dev/2010/04/30/hello-world/</link>
       <pubDate>Fri, 30 Apr 2010 12:07:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/04/30/hello-world/</guid>
+      <guid>https://dmrz.dev/2010/04/30/hello-world/</guid>
       <description>&lt;p&gt;This is actually not the first time I am launching a blog. I have archived all my old (mostly russian) articles at &lt;a href=&#34;http://dimaka.wordpress.com&#34;&gt;wordpress.com&lt;/a&gt;, first post is dated from 2007, big amount of things changed since those times, I have changed, my interests had been changed. Also, this is more home page of mine, than just a blog. It will involve a lot of things I need, I use and I want to share with others.&lt;/p&gt;
 &lt;p&gt;I attend and I do like to read things on web in English, I like to deal with people using this language, that is why entire site and blog entries will be written in it. I am from Ukraine, that is not my native language, I still study it, so either my speech and texts are not fluent. Just feel free to ask anything in a case of misunderstanding.&lt;/p&gt;</description>
     </item>

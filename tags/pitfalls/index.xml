@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pitfalls on Dima Moroz</title>
-    <link>https://dimamoroz.com/tags/pitfalls/</link>
+    <link>https://dmrz.dev/tags/pitfalls/</link>
     <description>Recent content in pitfalls on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Dec 2010 12:12:00 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/pitfalls/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2010 12:12:00 +0200</lastBuildDate><atom:link href="https://dmrz.dev/tags/pitfalls/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu Python virtual environments pitfalls</title>
-      <link>https://dimamoroz.com/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</link>
+      <link>https://dmrz.dev/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</link>
       <pubDate>Sat, 04 Dec 2010 12:12:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</guid>
+      <guid>https://dmrz.dev/2010/12/04/ubuntu-python-virtual-environments-pitfalls/</guid>
       <description>&lt;p&gt;I always face several pitfalls, while creating isolated python environment on my laptop, where i&amp;rsquo;m running Ubuntu.&lt;/p&gt;
 &lt;p&gt;So decided to make a memory note how to fight them, probably it can be helpful to anyone else.&lt;/p&gt;</description>
     </item>

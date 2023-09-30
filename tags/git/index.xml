@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Dima Moroz</title>
-    <link>https://dimamoroz.com/tags/git/</link>
+    <link>https://dmrz.dev/tags/git/</link>
     <description>Recent content in git on Dima Moroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Mar 2011 07:30:00 +0200</lastBuildDate><atom:link href="https://dimamoroz.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2011 07:30:00 +0200</lastBuildDate><atom:link href="https://dmrz.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Some useful git tips</title>
-      <link>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</link>
+      <link>https://dmrz.dev/2011/03/09/some-useful-git-tips/</link>
       <pubDate>Wed, 09 Mar 2011 07:30:00 +0200</pubDate>
       
-      <guid>https://dimamoroz.com/2011/03/09/some-useful-git-tips/</guid>
+      <guid>https://dmrz.dev/2011/03/09/some-useful-git-tips/</guid>
       <description>&lt;p&gt;Here will be useful git tips and just repeating commands I often use but can&amp;rsquo;t remember.&lt;/p&gt;</description>
     </item>
     
