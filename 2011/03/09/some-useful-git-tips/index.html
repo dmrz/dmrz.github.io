@@ -11,7 +11,7 @@
 <meta property='og:site_name' content='Dima Moroz'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/b5995355510b31e51ab6655f0c23832c?s=256'><meta property='article:section' content='blog'><meta property='article:tag' content='linux'><meta property='article:tag' content='git'><meta property='article:tag' content='tips'><meta property='article:published_time' content='2011-03-09T07:30:00&#43;02:00'/><meta property='article:modified_time' content='2011-03-09T07:30:00&#43;02:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.119.0">
 
   <title>Some useful git tips • Dima Moroz</title>
   <link rel='canonical' href='https://dimamoroz.com/2011/03/09/some-useful-git-tips/'>
@@ -25,14 +25,15 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-11219276-3', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
   
 
 </head>
@@ -70,34 +71,46 @@ if (!doNotTrack) {
 
     </div>
     <div class='entry-meta'>
-  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-  <line x1="16" y1="2" x2="16" y2="6"/>
-  <line x1="8" y1="2" x2="8" y2="6"/>
-  <line x1="3" y1="10" x2="21" y2="10"/>
-
+  <span class='posted-on'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+<line x1="16" y1="2" x2="16" y2="6" />
+<line x1="8" y1="2" x2="8" y2="6" />
+<line x1="3" y1="10" x2="21" y2="10" />
 </svg>
 <span class='screen-reader-text'>Posted on </span>
   <time class='entry-date' datetime='2011-03-09T07:30:00&#43;02:00'>2011, Mar 09</time>
 </span>
 
-  <span class='byline'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
-  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
-
+  <span class='byline'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1" />
+<path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z" />
 </svg>
 <span class='screen-reader-text'> by </span><a href='/authors/dmrz'>Dima Moroz</a></span>
   
-<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <circle cx="12" cy="12" r="10"/>
-  <polyline points="12 6 12 12 15 15"/>
-
+<span class='reading-time'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><circle cx="12" cy="12" r="10" />
+<polyline points="12 6 12 12 15 15" />
 </svg>
 One min read
 </span>
@@ -116,44 +129,48 @@ One min read
   <p>Here will be useful git tips and just repeating commands I often use but can&rsquo;t remember.</p>
 <h3 id="setting-up-a-remote-git-repository">Setting up a remote git repository</h3>
 <p>Firstly we create a bare git repository on the remote server:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh user@remotehost
-cd /repositories
-mkdir project.git
-cd project.git
-git --bare init
-exit
-</code></pre></div><p>Since the remote one is ready, let&rsquo;s change to our local repository and configure it to work with remote origin:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /projects/project
-git remote add origin ssh://user@remotehost/repositories/project.git
-git config branch.master.remote origin
-git config branch.master.merge refs/heads/master
-git push --all
-</code></pre></div><p>If you do not have a local git repository, for instance if you setup a new empty project, you can simply clone remote repository:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone ssh://user@remotehost/repositories/project.git
-</code></pre></div><p>It will warn you that you&rsquo;ve cloned an empty repository, but it&rsquo;s okay.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh user@remotehost
+</span></span><span style="display:flex;"><span>cd /repositories
+</span></span><span style="display:flex;"><span>mkdir project.git
+</span></span><span style="display:flex;"><span>cd project.git
+</span></span><span style="display:flex;"><span>git --bare init
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div><p>Since the remote one is ready, let&rsquo;s change to our local repository and configure it to work with remote origin:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /projects/project
+</span></span><span style="display:flex;"><span>git remote add origin ssh://user@remotehost/repositories/project.git
+</span></span><span style="display:flex;"><span>git config branch.master.remote origin
+</span></span><span style="display:flex;"><span>git config branch.master.merge refs/heads/master
+</span></span><span style="display:flex;"><span>git push --all
+</span></span></code></pre></div><p>If you do not have a local git repository, for instance if you setup a new empty project, you can simply clone remote repository:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone ssh://user@remotehost/repositories/project.git
+</span></span></code></pre></div><p>It will warn you that you&rsquo;ve cloned an empty repository, but it&rsquo;s okay.</p>
 <p>Now we have ready to use local repository, synced with remote origin.</p>
 <h3 id="checking-out-branches-from-the-remote-git-repository">Checking out branches from the remote git repository</h3>
 <p>To list all available local and remote branches type:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -a
-</code></pre></div><p>To check out a needed remote branch:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout -t origin/branch_name
-</code></pre></div><p>To pull/push changes from/to remote branch:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git pull origin branch_name
-git push origin branch_name
-</code></pre></div><h3 id="removing-a-remote-branch">Removing a remote branch</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -a
+</span></span></code></pre></div><p>To check out a needed remote branch:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -t origin/branch_name
+</span></span></code></pre></div><p>To pull/push changes from/to remote branch:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin branch_name
+</span></span><span style="display:flex;"><span>git push origin branch_name
+</span></span></code></pre></div><h3 id="removing-a-remote-branch">Removing a remote branch</h3>
 <p>This will delete some-branch within the remote repository:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin :heads/some-branch
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin :heads/some-branch
+</span></span></code></pre></div>
 </div>
 
   
 <footer class='entry-footer'>
-  <div class='container sep-before'><div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
-  <line x1="7" y1="7" x2="7" y2="7"/>
-
+  <div class='container sep-before'><div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
 </svg>
 <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/linux/'>linux</a>, <a class='tag' href='/tags/git/'>git</a>, <a class='tag' href='/tags/tips/'>tips</a></div>
 
@@ -166,23 +183,31 @@ git push origin branch_name
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
       <a href='/2010/12/09/creating-public-rsa-key-when-you-already-have-private-one/'>
-        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="20" y1="12" x2="4" y2="12"/>
-  <polyline points="10 18 4 12 10 6"/>
-
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>Creating a public rsa key when you already have a private one</a>
     </div><div class='next-entry sep-before'>
       <a href='/2011/03/13/redmine-sending-email-using-google-apps/'>
-        <span class='screen-reader-text'>Next post: </span>Redmine: sending email using google apps<span aria-hidden='true'>Next <svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-
+        <span class='screen-reader-text'>Next post: </span>Redmine: sending email using google apps<span aria-hidden='true'>Next <svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="4" y1="12" x2="20" y2="12" />
+<polyline points="14 6 20 12 14 18" />
 </svg>
 </span>
       </a>
@@ -198,24 +223,21 @@ git push origin branch_name
         <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
     <ul><li>
         <a href='https://github.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/dmrz' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
 </svg>
 </a>
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2010-2021 Dima Moroz </p>
+  <p> &copy; 2010-2023 Dima Moroz </p>
 </div>
 
         </div>
